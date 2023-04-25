@@ -10,6 +10,9 @@
 		1A948E9D29F6E3770072C915 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A948E9C29F6E3770072C915 /* main.swift */; };
 		1A948EA729F6F3B00072C915 /* Guest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A948EA629F6F3B00072C915 /* Guest.swift */; };
 		1A948EA929F6F3D20072C915 /* GuestHashTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A948EA829F6F3D20072C915 /* GuestHashTable.swift */; };
+		1A97E94C29F8921300CA5AFA /* AVLNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A97E94B29F8921300CA5AFA /* AVLNode.swift */; };
+		1A97E94E29F8922B00CA5AFA /* AVLTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A97E94D29F8922B00CA5AFA /* AVLTree.swift */; };
+		1A97E95029F892F900CA5AFA /* HotelRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A97E94F29F892F900CA5AFA /* HotelRoom.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,6 +32,9 @@
 		1A948E9C29F6E3770072C915 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		1A948EA629F6F3B00072C915 /* Guest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Guest.swift; sourceTree = "<group>"; };
 		1A948EA829F6F3D20072C915 /* GuestHashTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestHashTable.swift; sourceTree = "<group>"; };
+		1A97E94B29F8921300CA5AFA /* AVLNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVLNode.swift; sourceTree = "<group>"; };
+		1A97E94D29F8922B00CA5AFA /* AVLTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVLTree.swift; sourceTree = "<group>"; };
+		1A97E94F29F892F900CA5AFA /* HotelRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelRoom.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +67,7 @@
 		1A948E9B29F6E3770072C915 /* courseProject */ = {
 			isa = PBXGroup;
 			children = (
+				1A97E94A29F891F800CA5AFA /* AVLTree */,
 				1A948EA529F6F3960072C915 /* HashTable */,
 				1A948E9C29F6E3770072C915 /* main.swift */,
 			);
@@ -74,6 +81,16 @@
 				1A948EA829F6F3D20072C915 /* GuestHashTable.swift */,
 			);
 			name = HashTable;
+			sourceTree = "<group>";
+		};
+		1A97E94A29F891F800CA5AFA /* AVLTree */ = {
+			isa = PBXGroup;
+			children = (
+				1A97E94B29F8921300CA5AFA /* AVLNode.swift */,
+				1A97E94D29F8922B00CA5AFA /* AVLTree.swift */,
+				1A97E94F29F892F900CA5AFA /* HotelRoom.swift */,
+			);
+			path = AVLTree;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,8 +152,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A948E9D29F6E3770072C915 /* main.swift in Sources */,
+				1A97E95029F892F900CA5AFA /* HotelRoom.swift in Sources */,
+				1A97E94C29F8921300CA5AFA /* AVLNode.swift in Sources */,
 				1A948EA729F6F3B00072C915 /* Guest.swift in Sources */,
 				1A948EA929F6F3D20072C915 /* GuestHashTable.swift in Sources */,
+				1A97E94E29F8922B00CA5AFA /* AVLTree.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
