@@ -1,12 +1,12 @@
 
 class DNode<T> {
-    var value: T
+    var value: T?
     
     var next: DNode<T>?
     
     var previous: DNode<T>?
     
-    init(value: T) {
+    init(value: T?) {
         self.value = value
     }
 }
@@ -175,7 +175,7 @@ struct DLinkedList<T> {
         node.previous = nil
         node.next = nil
         
-        return node.value
+        return node.value!
     }
     
     public mutating func removeAll() {
@@ -193,12 +193,25 @@ struct DLinkedList<T> {
             print("Items in this list:")
             var current = head
             var count = 1
+            
             while current != nil {
+                
                 print("Item \(count): \((current?.value)!)")
                 current = current?.next
                 count += 1
             }
+            
             print("")
         }
+    }
+    public func getCountElements()->Int {
+        var current = head
+        var count = 1
+        while current != nil {
+            print(current?.value)
+            current = current?.next
+            count += 1
+        }
+        return count - 1
     }
 }

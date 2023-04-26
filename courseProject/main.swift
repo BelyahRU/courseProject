@@ -51,11 +51,12 @@ var checkIOg5 = CheckInOut(passportId: "4017-352955", number: "L003", checkInDat
 var list = DLinkedList<CheckInOut>()
 
 let coolNode = DNode(value: checkIOg1)
-
+list.prepend(value: checkIOg1)
 list.prepend(value: checkIOg2)
 list.prepend(value: checkIOg3)
 list.prepend(value: checkIOg4)
 list.append(value: checkIOg5)
+print(list.getCountElements())
 //list.insert(value: "apples", at: 2)
 //list.insert(node: coolNode, at: 3)
 
