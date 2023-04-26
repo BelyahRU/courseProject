@@ -42,4 +42,20 @@ HotelRooms.insert(room4)
 HotelRooms.insert(room5)
 print(HotelRooms.description)
 // check-in and check-out of guests.
+var list = DLinkedList<String>()
+
+let coolNode = DNode(value: "blueberries")
+
+list.prepend(value: "strawberries")
+list.prepend(value: "watermelon")
+list.prepend(value: "oranges")
+list.append(value: "lemons")
+list.insert(value: "apples", at: 2)
+list.insert(node: coolNode, at: 3)
+
+list.printList()
+
+list.removeAll()
+
+list.printList()
 // Пример использования

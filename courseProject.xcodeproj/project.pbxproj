@@ -13,6 +13,7 @@
 		1A97E94C29F8921300CA5AFA /* AVLNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A97E94B29F8921300CA5AFA /* AVLNode.swift */; };
 		1A97E94E29F8922B00CA5AFA /* AVLTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A97E94D29F8922B00CA5AFA /* AVLTree.swift */; };
 		1A97E95029F892F900CA5AFA /* HotelRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A97E94F29F892F900CA5AFA /* HotelRoom.swift */; };
+		1A97E95629F8A6CF00CA5AFA /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A97E95529F8A6CF00CA5AFA /* LinkedList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -35,6 +36,7 @@
 		1A97E94B29F8921300CA5AFA /* AVLNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVLNode.swift; sourceTree = "<group>"; };
 		1A97E94D29F8922B00CA5AFA /* AVLTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVLTree.swift; sourceTree = "<group>"; };
 		1A97E94F29F892F900CA5AFA /* HotelRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelRoom.swift; sourceTree = "<group>"; };
+		1A97E95529F8A6CF00CA5AFA /* LinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 		1A948E9B29F6E3770072C915 /* courseProject */ = {
 			isa = PBXGroup;
 			children = (
+				1A97E95429F8A6B700CA5AFA /* LinkedList */,
 				1A97E94A29F891F800CA5AFA /* AVLTree */,
 				1A948EA529F6F3960072C915 /* HashTable */,
 				1A948E9C29F6E3770072C915 /* main.swift */,
@@ -91,6 +94,14 @@
 				1A97E94F29F892F900CA5AFA /* HotelRoom.swift */,
 			);
 			path = AVLTree;
+			sourceTree = "<group>";
+		};
+		1A97E95429F8A6B700CA5AFA /* LinkedList */ = {
+			isa = PBXGroup;
+			children = (
+				1A97E95529F8A6CF00CA5AFA /* LinkedList.swift */,
+			);
+			path = LinkedList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -157,6 +168,7 @@
 				1A948EA729F6F3B00072C915 /* Guest.swift in Sources */,
 				1A948EA929F6F3D20072C915 /* GuestHashTable.swift in Sources */,
 				1A97E94E29F8922B00CA5AFA /* AVLTree.swift in Sources */,
+				1A97E95629F8A6CF00CA5AFA /* LinkedList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
