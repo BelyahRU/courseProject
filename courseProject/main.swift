@@ -7,6 +7,9 @@
 // 6) word search algorithm in the text - Боуера и Мура (БМ)
 
 
+
+
+
 // guest information
 var hashTable = GuestHashTable(capacity: 10)
 
@@ -27,6 +30,11 @@ let foundGuest = hashTable.search("9876-543210")
 
 hashTable.delete("1234-567890")
 
+
+
+
+
+
 // Hotel room data
 var room1 = HotelRoom(number: "L001", numberOfSeats: "2", numberOfRooms: "3", presenceOfABathroom: true, equipment: "Телевизор, ванна, кухня, 2 кровати")
 var room2 = HotelRoom(number: "L005", numberOfSeats: "1", numberOfRooms: "3", presenceOfABathroom: true, equipment: "Телевизор, окно, кухня, 2 кровати")
@@ -42,12 +50,17 @@ HotelRooms.insert(room4)
 HotelRooms.insert(room5)
 //print(HotelRooms.description)
 
+
+
+
+
+
 // check-in and check-out of guests.
 var checkIOg1 = CheckInOut(passportId: "1917-122955", number: "L408", checkInData: "20.02.2023", checkOutData: "30.04.2023")
 var checkIOg2 = CheckInOut(passportId: "1920-143955", number: "L508", checkInData: "30.12.2022", checkOutData: "31.04.2023")
-var checkIOg3 = CheckInOut(passportId: "4917-654955", number: "L001", checkInData: "10.02.2023", checkOutData: "20.04.2023")
+var checkIOg3 = CheckInOut(passportId: "4917-654955", number: "L008", checkInData: "10.02.2023", checkOutData: "20.04.2023")
 var checkIOg4 = CheckInOut(passportId: "1921-642952", number: "L933", checkInData: "20.02.2023", checkOutData: "30.02.2023")
-var checkIOg5 = CheckInOut(passportId: "4017-352955", number: "L003", checkInData: "20.01.2022", checkOutData: "30.02.2022")
+var checkIOg5 = CheckInOut(passportId: "4017-352955", number: "L001", checkInData: "20.01.2022", checkOutData: "30.02.2022")
 var checkIOg6 = CheckInOut(passportId: "4017-352955", number: "L409", checkInData: "20.01.2022", checkOutData: "30.02.2022")
 var checkIOg7 = CheckInOut(passportId: "4017-352955", number: "L000", checkInData: "20.01.2022", checkOutData: "30.02.2022")
 var list = DLinkedList<CheckInOut>()
@@ -66,11 +79,33 @@ list.append(value: checkIOg7)
 //list.insert(value: "apples", at: 2)
 //list.insert(node: coolNode, at: 3)
 
-list.printList()
+//list.printList()
 
-cocktailSort(&list)
+//cocktailSort(&list)
 //print(list.nodeAt(index: 2)!.value!.getCorrectNumber())
 //list.printList()
 // Пример использования
-list.printList()
+//list.printList()
 
+
+print("Регистрация постояльцев в гостинице\n")
+
+var doesProgramWork = true
+while doesProgramWork == true {
+    print("Выберете что вы хотите сделать: \n")
+    print("1.Зарегистрировать нового постояльца")
+    print("2.Удалить данные о постояльце")
+    print("3.Просмотр всех зарегистрированных постояльцев")
+    print("4.Очистка данных о постояльцах")
+    print("5.Поиск постояльца по номеру паспорта")
+    print("6.Поиск постояльца по ФИО")
+    print("7.Добавление нового гостиничного номера")
+    print("8.Удаление сведений о гостиничном номере")
+    print("9.Просмотр всех имеющихся номеров")
+    print("10.Очистка данных о гостиничных номерах")
+    print("11.Поиск гостиничного номера по \"по номеру гостиничного номера\"")
+    print("12.Поиск гостиничного номера по фрагментам \"Оборудования\"")
+    print("13.Регистрация вселения нового постояльца")
+    print("14.Регистрация вЫселения нового постояльца")
+    doesProgramWork = false
+}
