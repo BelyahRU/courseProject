@@ -46,7 +46,7 @@ extension AVLTree {
             guard let node = node else {
                 return nil
             }
-        if value.number == node.value.number {
+        if value.getCorrectNumber() == node.value.getCorrectNumber() {
                 if node.leftChild == nil && node.rightChild == nil {
                     return nil
                 }
