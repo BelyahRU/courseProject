@@ -6,6 +6,8 @@ struct HotelRoom{
     var numberOfRooms: String // количество комнат
     var presenceOfABathroom: Bool // наличие санузла
     var equipment: String // Оборудование в комнате
+    var countGuets: Int = 0 // Количество гостей
+    
     init(number: String, numberOfSeats: String, numberOfRooms: String, presenceOfABathroom: Bool, equipment: String) {
         self.number = number
         self.numberOfSeats = numberOfSeats
@@ -14,8 +16,12 @@ struct HotelRoom{
         self.equipment = equipment
     }
     
+    mutating func addGuest(){
+        countGuets += 1
+    }
+    
     func getCorrectNumber() -> Int {
-        var currentNum = Int(number.trimmingCharacters(in: CharacterSet.letters))!
+        let currentNum = Int(number.trimmingCharacters(in: CharacterSet.letters))!
         return currentNum
     }
 }

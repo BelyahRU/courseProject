@@ -43,16 +43,21 @@ HotelRooms.insert(room5)
 print(HotelRooms.description)
 
 // check-in and check-out of guests.
-var list = DLinkedList<String>()
+var checkIOg1 = CheckInOut(passportId: "1917-122955", number: "L408", checkInData: "20.02.2023", checkOutData: "30.04.2023")
+var checkIOg2 = CheckInOut(passportId: "1920-143955", number: "L508", checkInData: "30.12.2022", checkOutData: "31.04.2023")
+var checkIOg3 = CheckInOut(passportId: "4917-654955", number: "L001", checkInData: "10.02.2023", checkOutData: "20.04.2023")
+var checkIOg4 = CheckInOut(passportId: "1921-642952", number: "L933", checkInData: "20.02.2023", checkOutData: "30.02.2023")
+var checkIOg5 = CheckInOut(passportId: "4017-352955", number: "L003", checkInData: "20.01.2022", checkOutData: "30.02.2022")
+var list = DLinkedList<CheckInOut>()
 
-let coolNode = DNode(value: "blueberries")
+let coolNode = DNode(value: checkIOg1)
 
-list.prepend(value: "strawberries")
-list.prepend(value: "watermelon")
-list.prepend(value: "oranges")
-list.append(value: "lemons")
-list.insert(value: "apples", at: 2)
-list.insert(node: coolNode, at: 3)
+list.prepend(value: checkIOg2)
+list.prepend(value: checkIOg3)
+list.prepend(value: checkIOg4)
+list.append(value: checkIOg5)
+//list.insert(value: "apples", at: 2)
+//list.insert(node: coolNode, at: 3)
 
 list.printList()
 

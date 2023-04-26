@@ -1,8 +1,8 @@
 struct CheckInOut {
-    var passportId: String
+    var passportId: String // паспорт
     var number: String // room number , format - "ANNN"
-    var checkInData: String
-    var checkOutData: String
+    var checkInData: String // дата заезда
+    var checkOutData: String // дата выезда
     
     init(passportId: String, number: String, checkInData: String, checkOutData: String) {
         self.passportId = passportId

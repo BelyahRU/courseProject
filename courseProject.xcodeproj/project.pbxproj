@@ -14,7 +14,8 @@
 		1A97E94E29F8922B00CA5AFA /* AVLTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A97E94D29F8922B00CA5AFA /* AVLTree.swift */; };
 		1A97E95029F892F900CA5AFA /* HotelRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A97E94F29F892F900CA5AFA /* HotelRoom.swift */; };
 		1A97E95629F8A6CF00CA5AFA /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A97E95529F8A6CF00CA5AFA /* LinkedList.swift */; };
-		1A97E95829F8A84900CA5AFA /* CkeckInOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A97E95729F8A84900CA5AFA /* CkeckInOut.swift */; };
+		1A97E95C29F8AB2C00CA5AFA /* CheckInOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A97E95B29F8AB2C00CA5AFA /* CheckInOut.swift */; };
+		1A97E95E29F8BA1D00CA5AFA /* CocktailSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A97E95D29F8BA1D00CA5AFA /* CocktailSort.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -38,7 +39,8 @@
 		1A97E94D29F8922B00CA5AFA /* AVLTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVLTree.swift; sourceTree = "<group>"; };
 		1A97E94F29F892F900CA5AFA /* HotelRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelRoom.swift; sourceTree = "<group>"; };
 		1A97E95529F8A6CF00CA5AFA /* LinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedList.swift; sourceTree = "<group>"; };
-		1A97E95729F8A84900CA5AFA /* CkeckInOut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CkeckInOut.swift; sourceTree = "<group>"; };
+		1A97E95B29F8AB2C00CA5AFA /* CheckInOut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInOut.swift; sourceTree = "<group>"; };
+		1A97E95D29F8BA1D00CA5AFA /* CocktailSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailSort.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,21 +73,21 @@
 		1A948E9B29F6E3770072C915 /* courseProject */ = {
 			isa = PBXGroup;
 			children = (
-				1A97E95429F8A6B700CA5AFA /* LinkedList */,
-				1A97E94A29F891F800CA5AFA /* AVLTree */,
-				1A948EA529F6F3960072C915 /* HashTable */,
+				1A97E95A29F8AB0100CA5AFA /* CheckInOut */,
+				1A97E95929F8AAFD00CA5AFA /* HotelRooms */,
+				1A948EA529F6F3960072C915 /* Guests */,
 				1A948E9C29F6E3770072C915 /* main.swift */,
 			);
 			path = courseProject;
 			sourceTree = "<group>";
 		};
-		1A948EA529F6F3960072C915 /* HashTable */ = {
+		1A948EA529F6F3960072C915 /* Guests */ = {
 			isa = PBXGroup;
 			children = (
 				1A948EA629F6F3B00072C915 /* Guest.swift */,
 				1A948EA829F6F3D20072C915 /* GuestHashTable.swift */,
 			);
-			name = HashTable;
+			name = Guests;
 			sourceTree = "<group>";
 		};
 		1A97E94A29F891F800CA5AFA /* AVLTree */ = {
@@ -93,7 +95,6 @@
 			children = (
 				1A97E94B29F8921300CA5AFA /* AVLNode.swift */,
 				1A97E94D29F8922B00CA5AFA /* AVLTree.swift */,
-				1A97E94F29F892F900CA5AFA /* HotelRoom.swift */,
 			);
 			path = AVLTree;
 			sourceTree = "<group>";
@@ -102,9 +103,27 @@
 			isa = PBXGroup;
 			children = (
 				1A97E95529F8A6CF00CA5AFA /* LinkedList.swift */,
-				1A97E95729F8A84900CA5AFA /* CkeckInOut.swift */,
 			);
 			path = LinkedList;
+			sourceTree = "<group>";
+		};
+		1A97E95929F8AAFD00CA5AFA /* HotelRooms */ = {
+			isa = PBXGroup;
+			children = (
+				1A97E94A29F891F800CA5AFA /* AVLTree */,
+				1A97E94F29F892F900CA5AFA /* HotelRoom.swift */,
+			);
+			name = HotelRooms;
+			sourceTree = "<group>";
+		};
+		1A97E95A29F8AB0100CA5AFA /* CheckInOut */ = {
+			isa = PBXGroup;
+			children = (
+				1A97E95429F8A6B700CA5AFA /* LinkedList */,
+				1A97E95B29F8AB2C00CA5AFA /* CheckInOut.swift */,
+				1A97E95D29F8BA1D00CA5AFA /* CocktailSort.swift */,
+			);
+			name = CheckInOut;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,10 +184,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A97E95C29F8AB2C00CA5AFA /* CheckInOut.swift in Sources */,
 				1A948E9D29F6E3770072C915 /* main.swift in Sources */,
 				1A97E95029F892F900CA5AFA /* HotelRoom.swift in Sources */,
+				1A97E95E29F8BA1D00CA5AFA /* CocktailSort.swift in Sources */,
 				1A97E94C29F8921300CA5AFA /* AVLNode.swift in Sources */,
-				1A97E95829F8A84900CA5AFA /* CkeckInOut.swift in Sources */,
 				1A948EA729F6F3B00072C915 /* Guest.swift in Sources */,
 				1A948EA929F6F3D20072C915 /* GuestHashTable.swift in Sources */,
 				1A97E94E29F8922B00CA5AFA /* AVLTree.swift in Sources */,
