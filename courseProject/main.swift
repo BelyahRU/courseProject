@@ -50,7 +50,7 @@ var checkIOg4 = CheckInOut(passportId: "1921-642952", number: "L933", checkInDat
 var checkIOg5 = CheckInOut(passportId: "4017-352955", number: "L003", checkInData: "20.01.2022", checkOutData: "30.02.2022")
 var list = DLinkedList<CheckInOut>()
 
-let coolNode = DNode(value: checkIOg1)
+let coolNode = DNode<CheckInOut?>(value: nil)
 list.prepend(value: checkIOg1)
 list.prepend(value: checkIOg2)
 list.prepend(value: checkIOg3)
