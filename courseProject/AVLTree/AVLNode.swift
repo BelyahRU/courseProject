@@ -1,7 +1,7 @@
 //    Традиционно, узлы АВЛ-дерева хранят не высоту, а разницу высот правого и левого поддеревьев (так называемый balance factor)
 class AVLNode {
     
-    var value: Int
+    var value: HotelRoom
     
     var leftChild: AVLNode?
     
@@ -26,7 +26,7 @@ class AVLNode {
     }
     
     // инициализация ячейки в узел
-    init(value: Int) {
+    init(value: HotelRoom) {
         self.value = value
     }
     
@@ -49,10 +49,10 @@ extension AVLNode: CustomStringConvertible {
         }
 
         if node.leftChild == nil && node.rightChild == nil {
-            return root + "\(node.value)\n"
+            return root + "\(node.value.number)\n"
         }
             //вызывается рекурсивно
-            return diagram(for: node.rightChild, top + " ", top + "┌──", top + "│ ") + root + "\(node.value)\n" + diagram(for: node.leftChild, bottom + "│ ", bottom + "└──", bottom + " ")
+        return diagram(for: node.rightChild, top + " ", top + "┌──", top + "│ ") + root + "\(node.value.number)\n" + diagram(for: node.leftChild, bottom + "│ ", bottom + "└──", bottom + " ")
 
         }
 
@@ -70,45 +70,46 @@ extension AVLNode {
     }
     
     
-    func SumAndCountElem(sum: inout Int, count: inout Int) {
-        leftChild?.SumAndCountElem(sum: &sum, count: &count)
-        sum += value
-        count += 1
-        //array.append(value)
-        rightChild?.SumAndCountElem(sum: &sum, count: &count)
-    }
-    
-    func substrackNum(num: Int) {
-        leftChild?.substrackNum(num: num)
-        self.value -= num
-        rightChild?.substrackNum(num: num)
-    }
-    
-    func positionInTree(position: inout Int, _ number: Int,_ flag: inout Int) {
-        leftChild?.positionInTree(position: &position, number, &flag)
-        if flag != 1111 {
-            position += 1
-        }
-        if value == number {
-            print("\(position) - количество шагов, которое потребовалось, чтобы найти \(number)")
-            flag = 1111
-            return
-        }
-        rightChild?.positionInTree(position: &position, number, &flag)
-    }
-    
-    func ListPls(array: inout [Int]){
-        leftChild?.ListPls(array: &array)
-        array.append(value)
-        rightChild?.ListPls(array: &array)
-    }
-    
-    func ListMod3Elements(mod3Array: inout [Int]) {
-        leftChild?.ListMod3Elements(mod3Array: &mod3Array)
-        if value % 3 == 0 {
-            mod3Array.append(value)
-        }
-        rightChild?.ListMod3Elements(mod3Array: &mod3Array)
-    }
+//    func SumAndCountElem(sum: inout Int, count: inout Int) {
+//        leftChild?.SumAndCountElem(sum: &sum, count: &count)
+//        sum += value
+//        count += 1
+//        //array.append(value)
+//        rightChild?.SumAndCountElem(sum: &sum, count: &count)
+//    }
+//
+//    func substrackNum(num: Int) {
+//        leftChild?.substrackNum(num: num)
+//        self.value -= num
+//        rightChild?.substrackNum(num: num)
+//    }
+//
+//    func positionInTree(position: inout Int, _ number: Int,_ flag: inout Int) {
+//        leftChild?.positionInTree(position: &position, number, &flag)
+//        if flag != 1111 {
+//            position += 1
+//        }
+//        if value == number {
+//            print("\(position) - количество шагов, которое потребовалось, чтобы найти \(number)")
+//            flag = 1111
+//            return
+//        }
+//        rightChild?.positionInTree(position: &position, number, &flag)
+//    }
+//
+//    func ListPls(array: inout [Int]){
+//        leftChild?.ListPls(array: &array)
+//        array.append(value)
+//        rightChild?.ListPls(array: &array)
+//    }
+//
+//    func ListMod3Elements(mod3Array: inout [Int]) {
+//        leftChild?.ListMod3Elements(mod3Array: &mod3Array)
+//        if value % 3 == 0 {
+//            mod3Array.append(value)
+//        }
+//        rightChild?.ListMod3Elements(mod3Array: &mod3Array)
+//    }
     
 }
+

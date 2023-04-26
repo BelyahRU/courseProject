@@ -1,19 +1,28 @@
+
+
 // АВЛ-дерево — сбалансированное по высоте двоичное дерево поиска: для каждой его вершины высота её двух поддеревьев различается не более чем на 1.
+
+
+
+
+
+import Foundation
 
 class AVLTree {
     var root: AVLNode? // экземпляр класса
 }
 extension AVLTree {
     
-    func insert(_ value: Int) {
+    func insert(_ value: HotelRoom) {
         root = insert(from: root, value: value)
     }
-    func insert(from node: AVLNode?, value: Int) -> AVLNode {
+    func insert(from node: AVLNode?, value: HotelRoom) -> AVLNode {
             guard let node = node else { //проверяем наличие значения в узле
                 return AVLNode(value: value)
             }
+
             // сверяем значение узла со сзначением
-            if value < node.value {
+        if value.getCorrectNumber() < node.value.getCorrectNumber() {
                 //вызываем рекурсивно для левого
                 node.leftChild = insert(from: node.leftChild, value: value)
             } else {
@@ -30,14 +39,14 @@ extension AVLTree {
 
 extension AVLTree {
     
-    public func remove(_ value: Int) {
+    public func remove(_ value: HotelRoom) {
             root = remove(node: root, value: value)
     }
-    private func remove(node: AVLNode?, value: Int) -> AVLNode? {
+    private func remove(node: AVLNode?, value: HotelRoom) -> AVLNode? {
             guard let node = node else {
                 return nil
             }
-            if value == node.value {
+        if value.number == node.value.number {
                 if node.leftChild == nil && node.rightChild == nil {
                     return nil
                 }
@@ -49,7 +58,7 @@ extension AVLTree {
                 }
                 node.value = node.rightChild!.min.value
                 node.rightChild = remove(node: node.rightChild, value: node.value)
-            } else if value < node.value {
+        } else if value.getCorrectNumber() < node.value.getCorrectNumber() {
                 node.leftChild = remove(node: node.leftChild, value: value)
             } else {
                 node.rightChild = remove(node: node.rightChild, value: value)
@@ -162,53 +171,60 @@ extension AVLTree {
     }
 }
 
-extension AVLTree {
-    func find(_ value: Int) {
-        var position = 0
-        var flag = 0
-        root?.positionInTree(position: &position, value, &flag)
-        if flag == 0{
-            print("Данное число не найдено")
-        }
-    }
-}
-
-extension AVLTree {
-    func getArray() -> [Int]{
-        var array: [Int] = []
-        root?.ListPls(array: &array)
-        return array
-    }
-    
-}
-
-extension AVLTree {
-    func getSrArifm() {
-        var sum = 0
-        var count = 0
-        root?.SumAndCountElem(sum: &sum, count: &count)
-        root?.substrackNum(num: sum / count)
-        return
-        
-    }
-}
+//extension AVLTree {
+//    func find(_ value: Int) {
+//        var position = 0
+//        var flag = 0
+//        root?.positionInTree(position: &position, value, &flag)
+//        if flag == 0{
+//            print("Данное число не найдено")
+//        }
+//    }
+//}
+//
+//extension AVLTree {
+//    func getArray() -> [Int]{
+//        var array: [Int] = []
+//        root?.ListPls(array: &array)
+//        return array
+//    }
+//
+//}
+//
+//extension AVLTree {
+//    func getSrArifm() {
+//        var sum = 0
+//        var count = 0
+//        root?.SumAndCountElem(sum: &sum, count: &count)
+//        root?.substrackNum(num: sum / count)
+//        return
+//
+//    }
+//}
 extension AVLTree: CustomStringConvertible {
     var description: String {
         return root?.description ?? "empty tree"
     }
 }
+//
+//extension AVLTree {
+//    func removeMod3Elems() {
+//        var array: [Int] = []
+//        root?.ListMod3Elements(mod3Array: &array)
+//        if array == [] {
+//            print("Нет чисел, делящихся без остатка на 3")
+//            return
+//        }
+//        for i in 0...array.count-1 {
+//            remove(array[i])
+//        }
+//        return
+//    }
+//}
 
-extension AVLTree {
-    func removeMod3Elems() {
-        var array: [Int] = []
-        root?.ListMod3Elements(mod3Array: &array)
-        if array == [] {
-            print("Нет чисел, делящихся без остатка на 3")
-            return
-        }
-        for i in 0...array.count-1 {
-            remove(array[i])
-        }
-        return
-    }
-}
+
+
+
+
+
+

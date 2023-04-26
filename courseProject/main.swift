@@ -8,12 +8,6 @@
 
 
 // guest information
-
-
-// Hotel room data
-
-// check-in and check-out of guests.
-// Пример использования
 var hashTable = GuestHashTable(capacity: 10)
 
 let guest1 = Guest(passportNumber: "1234-567890", fullName: "Ivan Ivanov", birthYear: 1990, address: "Moscow", purposeOfStay: "Business")
@@ -32,3 +26,20 @@ if let guest = foundGuest {
 }
 
 hashTable.delete("1234-567890")
+
+// Hotel room data
+var room1 = HotelRoom(number: "L001", numberOfSeats: "2", numberOfRooms: "3", presenceOfABathroom: true, equipment: "Телевизор, ванна, кухня, 2 кровати")
+var room2 = HotelRoom(number: "L005", numberOfSeats: "1", numberOfRooms: "3", presenceOfABathroom: true, equipment: "Телевизор, окно, кухня, 2 кровати")
+var room3 = HotelRoom(number: "L302", numberOfSeats: "1", numberOfRooms: "3", presenceOfABathroom: true, equipment: "Котик, ванна, кухня, 2 кровати")
+var room4 = HotelRoom(number: "L201", numberOfSeats: "2", numberOfRooms: "3", presenceOfABathroom: true, equipment: "Прачка, ванна, кухня, 2 кровати")
+var room5 = HotelRoom(number: "L003", numberOfSeats: "2", numberOfRooms: "3", presenceOfABathroom: true, equipment: "Душ, ванна, кухня, 2 кровати")
+
+var HotelRooms = AVLTree()
+HotelRooms.insert(room1)
+HotelRooms.insert(room2)
+HotelRooms.insert(room3)
+HotelRooms.insert(room4)
+HotelRooms.insert(room5)
+print(HotelRooms.description)
+// check-in and check-out of guests.
+// Пример использования

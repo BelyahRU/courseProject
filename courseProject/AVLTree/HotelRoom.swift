@@ -1,3 +1,5 @@
+
+import Foundation
 struct HotelRoom{
     var number: String // номер номера, формата ANNN
     var numberOfSeats: String // количество мест
@@ -10,5 +12,10 @@ struct HotelRoom{
         self.numberOfRooms = numberOfRooms
         self.presenceOfABathroom = presenceOfABathroom
         self.equipment = equipment
+    }
+    
+    func getCorrectNumber() -> Int {
+        var currentNum = Int(number.trimmingCharacters(in: CharacterSet.letters))!
+        return currentNum
     }
 }
