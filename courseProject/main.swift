@@ -203,7 +203,7 @@ while doesProgramWork == true {
         // дописать по методичке
         var result = hotelRooms.searchByEquipment(equipment)
     } else if answer == 13 {
-        
+        print()
     }
     
     if answer! <= 0 || answer! > 14{
