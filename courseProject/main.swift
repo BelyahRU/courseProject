@@ -41,6 +41,7 @@ HotelRooms.insert(room3)
 HotelRooms.insert(room4)
 HotelRooms.insert(room5)
 print(HotelRooms.description)
+
 // check-in and check-out of guests.
 var list = DLinkedList<String>()
 
