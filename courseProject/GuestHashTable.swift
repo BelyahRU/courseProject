@@ -2,6 +2,7 @@ class GuestHashTable {
     private var table: [Guest?]
     private var capacity: Int
     private var size: Int
+    private var count: Int = 0
     
     init(capacity: Int) {
         self.capacity = capacity
@@ -22,6 +23,7 @@ class GuestHashTable {
     }
     
     func insert(_ guest: Guest) {
+        count += 1
         if size == capacity {
             print("Table is full")
             return
@@ -49,7 +51,9 @@ class GuestHashTable {
         return nil
     }
     
+    
     func delete(_ passportNumber: String) {
+        count -= 1
         var index = hash(passportNumber)
         var i = 1
         while table[index] != nil {
@@ -61,5 +65,20 @@ class GuestHashTable {
             index = getNextIndex(index, i)
             i += 1
         }
+    }
+    func deleteAll() {
+        count = 0
+        self.table = Array(repeating: nil, count: capacity)
+    }
+    func printGuest(){
+        var allGuests = ""
+        for i in 0..<count{
+            if i == count - 1 {
+                allGuests += table[i]!.fullName
+            } else {
+                allGuests += table[i]!.fullName+", "
+            }
+        }
+        print(allGuests)
     }
 }

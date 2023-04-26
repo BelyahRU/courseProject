@@ -10,24 +10,24 @@
 
 
 
-// guest information
-//var hashTable = GuestHashTable(capacity: 10)
-//
-//let guest1 = Guest(passportNumber: "1234-567890", fullName: "Ivan Ivanov", birthYear: 1990, address: "Moscow", purposeOfStay: "Business")
-//
-//hashTable.insert(guest1)
-//
-//let guest2 = Guest(passportNumber: "9876-543210", fullName: "Anna Petrova", birthYear: 1985, address: "Saint Petersburg", purposeOfStay: "Vacation")
-//hashTable.insert(guest2)
-//
-//let guest3 = Guest(passportNumber: "5678-123456", fullName: "Sergey Smirnov", birthYear: 1978, address: "Kazan", purposeOfStay: "Business")
-//hashTable.insert(guest3)
-//
-//let foundGuest = hashTable.search("9876-543210")
+ //guest information
+var hashTable = GuestHashTable(capacity: 10)
+
+let guest1 = Guest(passportNumber: "1234-567890", fullName: "Ivan Ivanov", birthYear: 1990, address: "Moscow", purposeOfStay: "Business")
+
+hashTable.insert(guest1)
+
+let guest2 = Guest(passportNumber: "9876-543210", fullName: "Anna Petrova", birthYear: 1985, address: "Saint Petersburg", purposeOfStay: "Vacation")
+hashTable.insert(guest2)
+
+let guest3 = Guest(passportNumber: "5678-123456", fullName: "Sergey Smirnov", birthYear: 1978, address: "Kazan", purposeOfStay: "Business")
+hashTable.insert(guest3)
+
+let foundGuest = hashTable.search("9876-543210")
 //if let guest = foundGuest {
 //    print("Found guest: \(guest.fullName)")
 //}
-
+//hashTable.printGuest()
 //hashTable.delete("1234-567890")
 
 
@@ -118,18 +118,41 @@ while doesProgramWork == true {
         print("Для регистрации постояльца вам нужно будет ввести его данные")
         print("Введите серию и номер паспорта через тире, например 1111-111111:")
         // нужно написать проверку на корректность ввода данных
-        var id = String(readLine()!)
+        let id = String(readLine()!)
         print("Введите ФИО через пробел:")
-        var fullName = String(readLine()!)
+        let fullName = String(readLine()!)
         print("Введите год рождения:")
-        var birthYear = Int(readLine()!)
+        let birthYear = Int(readLine()!)
         print("Введите адрес прибытия:")
-        var adress = String(readLine()!)
+        let adress = String(readLine()!)
         print("Введите цель прибытия:")
-        var purpose = String(readLine()!)
+        let purpose = String(readLine()!)
         
-        var guest = Guest(passportNumber: id, fullName: fullName, birthYear: birthYear!, address: adress, purposeOfStay: purpose)
+        let guest = Guest(passportNumber: id, fullName: fullName, birthYear: birthYear!, address: adress, purposeOfStay: purpose)
         hotel.insert(guest)
+        print("Гость добавлен")
+    }else if answer == 2 {
+        print("Номер пасспорта постояльца, которого необходимо удалить из базы:")
+        let passportNumber = String(readLine()!)
+        hotel.delete(passportNumber)
+        print("Постоялец удален из базы")
+    } else if answer == 3 {
+        print("Все зарегистрированные пользователи: ")
+        hotel.printGuest()
+    } else if answer == 4{
+        hotel.deleteAll()
+        print("Все постояльцы удалены")
+    } else if answer == 5 {
+        print("Введите номер паспорта:")
+        let passportNumber = String(readLine()!)
+        
+        if let answ = hotel.search(passportNumber) {
+            print(answ)
+        } else {
+            print("Пользователь не найден")
+        }
+    } else if answer == 6 {
+        
     }
     if answer! <= 0 || answer! > 14{
         doesProgramWork = false
