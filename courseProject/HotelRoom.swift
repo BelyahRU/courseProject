@@ -24,4 +24,10 @@ struct HotelRoom{
         let currentNum = Int(number.trimmingCharacters(in: CharacterSet.letters))!
         return currentNum
     }
+    
+    func getAllInformation() -> String {
+        var info = ""
+        info += "Номер: \(number), количество мест: \(numberOfSeats), количество комнат: \(numberOfRooms), наличие санузла: \(presenceOfABathroom), Оборудование в комнате: \(equipment)"
+        return info
+    }
 }

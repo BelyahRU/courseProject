@@ -184,6 +184,18 @@ extension AVLTree {
     }
 }
 
+extension AVLTree {
+    func removeAll() {
+        root = nil
+    }
+}
+extension AVLTree {
+    func searchByEquipment(_ equipment: String) -> [HotelRoom]{
+        var array: [HotelRoom] = []
+        root?.positionInTreeByEquipment(equipment, &array)
+        return array
+    }
+}
 //extension AVLTree {
 //    func find(_ value: Int) {
 //        var position = 0
@@ -219,6 +231,7 @@ extension AVLTree: CustomStringConvertible {
         return root?.description ?? "empty tree"
     }
 }
+
 //
 //extension AVLTree {
 //    func removeMod3Elems() {

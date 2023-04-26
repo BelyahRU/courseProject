@@ -48,10 +48,12 @@ HotelRoomss.insert(room2)
 HotelRoomss.insert(room3)
 HotelRoomss.insert(room4)
 HotelRoomss.insert(room5)
-print(HotelRoomss.description)
-print(HotelRoomss.deleteRoom("L003"))
-print(HotelRoomss.description)
-
+//print(HotelRoomss.description)
+//print(HotelRoomss.deleteRoom("L003"))
+//print(HotelRoomss.description)
+//HotelRoomss.removeAll()
+//print(HotelRoomss.description)
+//print(HotelRoomss.searchByEquipment("Прачка"))
 
 
 
@@ -99,6 +101,7 @@ print("Регистрация постояльцев в гостинице\n")
 
 var doesProgramWork = true
 while doesProgramWork == true {
+    // добавить функцию, с помощью которой пользователь выбирал бы вместительность отеля
     print("Выберете что вы хотите сделать: \n")
     print("1.Зарегистрировать нового постояльца")
     print("2.Удалить данные о постояльце")
@@ -186,7 +189,21 @@ while doesProgramWork == true {
         // Добавить массив
         print(hotelRooms.description)
     } else if answer == 10 {
-        hotelRooms.re
+        hotelRooms.removeAll()
+        print("Данные очищены")
+    } else if answer == 11 {
+        print("Введите номер:")
+        let number = String(readLine()!)
+        var room = hotelRooms.find(number)!
+        // добавить постояльца
+        print(room.getAllInformation())
+    } else if answer == 12 {
+        print("Введите фрагменты оборудования через запятую с пробелом")
+        var equipment = String(readLine()!)
+        // дописать по методичке
+        var result = hotelRooms.searchByEquipment(equipment)
+    } else if answer == 13 {
+        
     }
     
     if answer! <= 0 || answer! > 14{

@@ -77,6 +77,16 @@ extension AVLNode {
         leftChild?.positionInTree(number, &currentValue)
         rightChild?.positionInTree(number, &currentValue)
     }
+    func positionInTreeByEquipment(_ equipment: String, _ array: inout [HotelRoom]) {
+        let set1 = Set(equipment.components(separatedBy: ", ").map { $0.trimmingCharacters(in: .whitespacesAndNewlines) })
+
+        let set2 = Set(value.equipment.components(separatedBy: ", ").map { $0.trimmingCharacters(in: .whitespacesAndNewlines) })
+        if set1.isSubset(of: set2) {
+            array.append(value)
+        }
+        leftChild?.positionInTreeByEquipment(equipment, &array)
+        rightChild?.positionInTreeByEquipment(equipment, &array)
+    }
     
     
 //    func SumAndCountElem(sum: inout Int, count: inout Int) {
