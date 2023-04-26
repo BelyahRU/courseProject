@@ -208,11 +208,11 @@ struct DLinkedList<T> {
         var current = head
         var count = 1
         while current != nil {
-            print(current?.value)
             current = current?.next
             count += 1
         }
         return count - 1
     }
+    
     
 }

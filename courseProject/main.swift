@@ -21,9 +21,9 @@ let guest3 = Guest(passportNumber: "5678-123456", fullName: "Sergey Smirnov", bi
 hashTable.insert(guest3)
 
 let foundGuest = hashTable.search("9876-543210")
-if let guest = foundGuest {
-    print("Found guest: \(guest.fullName)")
-}
+//if let guest = foundGuest {
+//    print("Found guest: \(guest.fullName)")
+//}
 
 hashTable.delete("1234-567890")
 
@@ -40,7 +40,7 @@ HotelRooms.insert(room2)
 HotelRooms.insert(room3)
 HotelRooms.insert(room4)
 HotelRooms.insert(room5)
-print(HotelRooms.description)
+//print(HotelRooms.description)
 
 // check-in and check-out of guests.
 var checkIOg1 = CheckInOut(passportId: "1917-122955", number: "L408", checkInData: "20.02.2023", checkOutData: "30.04.2023")
@@ -48,6 +48,8 @@ var checkIOg2 = CheckInOut(passportId: "1920-143955", number: "L508", checkInDat
 var checkIOg3 = CheckInOut(passportId: "4917-654955", number: "L001", checkInData: "10.02.2023", checkOutData: "20.04.2023")
 var checkIOg4 = CheckInOut(passportId: "1921-642952", number: "L933", checkInData: "20.02.2023", checkOutData: "30.02.2023")
 var checkIOg5 = CheckInOut(passportId: "4017-352955", number: "L003", checkInData: "20.01.2022", checkOutData: "30.02.2022")
+var checkIOg6 = CheckInOut(passportId: "4017-352955", number: "L409", checkInData: "20.01.2022", checkOutData: "30.02.2022")
+var checkIOg7 = CheckInOut(passportId: "4017-352955", number: "L000", checkInData: "20.01.2022", checkOutData: "30.02.2022")
 var list = DLinkedList<CheckInOut>()
 
 let coolNode = DNode<CheckInOut?>(value: nil)
@@ -56,13 +58,19 @@ list.prepend(value: checkIOg2)
 list.prepend(value: checkIOg3)
 list.prepend(value: checkIOg4)
 list.append(value: checkIOg5)
-print(list.getCountElements())
+list.append(value: checkIOg6)
+list.append(value: checkIOg7)
+//print(list.getCountElements())
+
+//print(list.nodeAt(index: 1)!.value!)
 //list.insert(value: "apples", at: 2)
 //list.insert(node: coolNode, at: 3)
 
 list.printList()
 
-list.removeAll()
-
-list.printList()
+cocktailSort(&list)
+//print(list.nodeAt(index: 2)!.value!.getCorrectNumber())
+//list.printList()
 // Пример использования
+list.printList()
+

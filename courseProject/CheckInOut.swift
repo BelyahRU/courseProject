@@ -1,3 +1,4 @@
+import Foundation
 struct CheckInOut {
     var passportId: String // паспорт
     var number: String // room number , format - "ANNN"
@@ -9,5 +10,9 @@ struct CheckInOut {
         self.number = number
         self.checkInData = checkInData
         self.checkOutData = checkOutData
+    }
+    func getCorrectNumber() -> Int {
+        let currentNum = Int(number.trimmingCharacters(in: CharacterSet.letters))!
+        return currentNum
     }
 }
