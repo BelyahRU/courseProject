@@ -40,6 +40,7 @@ extension AVLTree {
 extension AVLTree {
     
     public func remove(_ value: HotelRoom) {
+            
             root = remove(node: root, value: value)
     }
     private func remove(node: AVLNode?, value: HotelRoom) -> AVLNode? {
@@ -168,6 +169,18 @@ extension AVLTree {
                 return node
             }
         
+    }
+}
+extension AVLTree {
+    func find(_ number: String) -> HotelRoom?{
+        var currentValue:HotelRoom? = nil
+        root?.positionInTree(number, &currentValue)
+        return currentValue
+    }
+}
+extension AVLTree {
+    func deleteRoom(_ number: String){
+        remove(find(number)!)
     }
 }
 

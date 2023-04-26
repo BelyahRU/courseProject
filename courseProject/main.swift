@@ -42,13 +42,15 @@ var room3 = HotelRoom(number: "L302", numberOfSeats: "1", numberOfRooms: "3", pr
 var room4 = HotelRoom(number: "L201", numberOfSeats: "2", numberOfRooms: "3", presenceOfABathroom: true, equipment: "Прачка, ванна, кухня, 2 кровати")
 var room5 = HotelRoom(number: "L003", numberOfSeats: "2", numberOfRooms: "3", presenceOfABathroom: true, equipment: "Душ, ванна, кухня, 2 кровати")
 
-var HotelRooms = AVLTree()
-HotelRooms.insert(room1)
-HotelRooms.insert(room2)
-HotelRooms.insert(room3)
-HotelRooms.insert(room4)
-HotelRooms.insert(room5)
-//print(HotelRooms.description)
+var HotelRoomss = AVLTree()
+HotelRoomss.insert(room1)
+HotelRoomss.insert(room2)
+HotelRoomss.insert(room3)
+HotelRoomss.insert(room4)
+HotelRoomss.insert(room5)
+print(HotelRoomss.description)
+print(HotelRoomss.deleteRoom("L003"))
+print(HotelRoomss.description)
 
 
 
@@ -92,7 +94,7 @@ list.append(value: checkIOg7)
 
 
 var hotel = GuestHashTable(capacity: 999) // Вместительность гостиницы
-
+var hotelRooms = AVLTree() // Номера гостиницы
 print("Регистрация постояльцев в гостинице\n")
 
 var doesProgramWork = true
@@ -153,7 +155,40 @@ while doesProgramWork == true {
         }
     } else if answer == 6 {
         
+        
+        
+        print()
+        
+        
+        
+    } else if answer == 7 {
+        print("Для добавления номер в гостиницу необходимо указать дополнительные данные \n")
+        print("Укажите номер в формате ANNN: ")
+        //добавь проверку формата
+        let number = String(readLine()!)
+        print("Укажите количество мест в номере: ")
+        let numberOfSeats = String(readLine()!)
+        print("Укажите количество комнат в номере: ")
+        let numberOfRooms = String(readLine()!)
+        print("Укажите есть ли санузел (true/false)")
+        let presenceOfBathroom = Bool(readLine()!)
+        print("Укажите Оборудование")
+        let equipment = String(readLine()!)
+        let room = HotelRoom(number: number, numberOfSeats: numberOfSeats, numberOfRooms: numberOfRooms, presenceOfABathroom: presenceOfBathroom!, equipment: equipment)
+        hotelRooms.insert(room)
+        print("Номер создан")
+    } else if answer == 8 {
+        print("Введите номер, который вы хотите удалить")
+        let number = String(readLine()!)
+        hotelRooms.deleteRoom(number)
+        print("Номер удален")
+    } else if answer == 9 {
+        // Добавить массив
+        print(hotelRooms.description)
+    } else if answer == 10 {
+        hotelRooms.re
     }
+    
     if answer! <= 0 || answer! > 14{
         doesProgramWork = false
     }

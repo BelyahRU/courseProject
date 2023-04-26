@@ -62,11 +62,20 @@ extension AVLNode: CustomStringConvertible {
 extension AVLNode {
     
     // симметричный порядок обхода(слева, голова, справа)
-    func traverseInOrder() {
+    func traversePreOrder() {
         
         print(value)
-        leftChild?.traverseInOrder()
-        rightChild?.traverseInOrder()
+        leftChild?.traversePreOrder()
+        rightChild?.traversePreOrder()
+    }
+    func positionInTree(_ number: String, _ currentValue: inout HotelRoom?) {
+     
+        if value.number == number {
+            currentValue = value
+        }
+        
+        leftChild?.positionInTree(number, &currentValue)
+        rightChild?.positionInTree(number, &currentValue)
     }
     
     
