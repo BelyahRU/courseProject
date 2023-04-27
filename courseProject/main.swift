@@ -159,14 +159,18 @@ while doesProgramWork == true {
     print("Для выхода из программы введите число, не соответствующее диапазону")
     let answer = Int(readLine()!)
     if answer! == 1 {
-        //Вдруг он уже есть в базе
         print("Для регистрации постояльца вам нужно будет ввести его данные")
         print("Введите серию и номер паспорта через тире, например 1111-111111:")
         var id = String(readLine()!)
         
         while true {
             if isCorrectPassport(id) == true {
-                break
+                if let a = hotel.search(id) {
+                    print("Пользователь уже есть в базе данных")
+                    id = String(readLine()!)
+                } else {
+                    break
+                }
             } else {
                 print("паспорт введен неверно, повторите ввод")
                 id = String(readLine()!)
