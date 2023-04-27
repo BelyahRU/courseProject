@@ -212,11 +212,7 @@ while doesProgramWork == true {
         let passportNumber = String(readLine()!)
         
         if let answ = hotel.search(passportNumber) {
-            print("\nФИО постояльца - \(answ.fullName)")
-            print("Дата рождения - \(answ.birthYear)")
-            print("Адрес - \(answ.address)")
-            print("Номер паспорта - \(answ.passportNumber)")
-            print("Цель визита - \(answ.purposeOfStay)")
+            answ.getAllInformation()
             if let roomAnsw = listGuests.find(passportId: answ.passportNumber)?.value {
                 print( hotelRooms.find(roomAnsw.number)!.getAllInformation())
             } else {
@@ -314,10 +310,7 @@ while doesProgramWork == true {
         }
         for i in 0..<arrayRooms.count {
             let room = hotelRooms.find(arrayRooms[i])!
-            print("\nНомер \(room.number)")
-            print("Количество комнат в этом номере - \(hotelRooms.find(room.number)!.numberOfRooms)")
-            print("Оборудование: \(hotelRooms.find(room.number)!.equipment)")
-            
+            print(hotelRooms.find(room.number)!.getAllInformation())
         }
         print("\nНомера в виде АВЛ-дерева:")
         print(hotelRooms.description)
@@ -331,6 +324,7 @@ while doesProgramWork == true {
         let number = String(readLine()!)
         let room = hotelRooms.find(number)!
         // добавить постояльца
+        
         print(room.getAllInformation())
         
     } else if answer == 12 {
