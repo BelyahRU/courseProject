@@ -81,4 +81,15 @@ class GuestHashTable {
         }
         print(allGuests)
     }
+    
+    
+    func searchByFullName(fullname: String) -> [Guest]{
+        var arrayGuests: [Guest] = []
+        for i in 0 ..< table.count {
+            if fullname == table[i]!.fullName {
+                arrayGuests.append(table[i]!)
+            }
+        }
+        return arrayGuests
+    }
 }

@@ -6,6 +6,7 @@ class AVLTree {
 extension AVLTree {
     
     func insert(_ value: HotelRoom) {
+        
         root = insert(from: root, value: value)
     }
     func insert(from node: AVLNode?, value: HotelRoom) -> AVLNode {

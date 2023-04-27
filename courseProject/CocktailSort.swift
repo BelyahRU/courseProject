@@ -12,7 +12,6 @@ func cocktailSort(_ linkedList: inout DLinkedList<CheckInOut>) {
                 
                 var a = linkedList.nodeAt(index: i)!.value!
                 if i == linkedList.getCountElements() - 2 {
-                    
                     linkedList.remove(node: linkedList.nodeAt(index: i)!)
                     linkedList.append(value: a)
                     

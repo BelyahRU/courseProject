@@ -16,6 +16,7 @@
 		1A97E95629F8A6CF00CA5AFA /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A97E95529F8A6CF00CA5AFA /* LinkedList.swift */; };
 		1A97E95C29F8AB2C00CA5AFA /* CheckInOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A97E95B29F8AB2C00CA5AFA /* CheckInOut.swift */; };
 		1A97E95E29F8BA1D00CA5AFA /* CocktailSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A97E95D29F8BA1D00CA5AFA /* CocktailSort.swift */; };
+		1AEF054629FA731B00D01E0F /* СorrectnessСhecks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEF054529FA731B00D01E0F /* СorrectnessСhecks.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -41,6 +42,7 @@
 		1A97E95529F8A6CF00CA5AFA /* LinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedList.swift; sourceTree = "<group>"; };
 		1A97E95B29F8AB2C00CA5AFA /* CheckInOut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInOut.swift; sourceTree = "<group>"; };
 		1A97E95D29F8BA1D00CA5AFA /* CocktailSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailSort.swift; sourceTree = "<group>"; };
+		1AEF054529FA731B00D01E0F /* СorrectnessСhecks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "СorrectnessСhecks.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 				1A97E95929F8AAFD00CA5AFA /* HotelRooms */,
 				1A948EA529F6F3960072C915 /* Guests */,
 				1A948E9C29F6E3770072C915 /* main.swift */,
+				1AEF054529FA731B00D01E0F /* СorrectnessСhecks.swift */,
 			);
 			path = courseProject;
 			sourceTree = "<group>";
@@ -192,6 +195,7 @@
 				1A948EA729F6F3B00072C915 /* Guest.swift in Sources */,
 				1A948EA929F6F3D20072C915 /* GuestHashTable.swift in Sources */,
 				1A97E94E29F8922B00CA5AFA /* AVLTree.swift in Sources */,
+				1AEF054629FA731B00D01E0F /* СorrectnessСhecks.swift in Sources */,
 				1A97E95629F8A6CF00CA5AFA /* LinkedList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -69,7 +69,6 @@ var checkIOg6 = CheckInOut(passportId: "4017-352955", number: "L409", checkInDat
 var checkIOg7 = CheckInOut(passportId: "4017-352955", number: "L000", checkInData: "20.01.2022", checkOutData: "30.02.2022")
 var list = DLinkedList<CheckInOut>()
 
-let coolNode = DNode<CheckInOut?>(value: nil)
 list.prepend(value: checkIOg1)
 list.prepend(value: checkIOg2)
 list.prepend(value: checkIOg3)
@@ -94,7 +93,7 @@ list.append(value: checkIOg7)
 
 
 
-
+var listGuests = DLinkedList<CheckInOut>() // Список гостей
 var hotel = GuestHashTable(capacity: 999) // Вместительность гостиницы
 var hotelRooms = AVLTree() // Номера гостиницы
 print("Регистрация постояльцев в гостинице\n")
@@ -122,8 +121,17 @@ while doesProgramWork == true {
     if answer! == 1 {
         print("Для регистрации постояльца вам нужно будет ввести его данные")
         print("Введите серию и номер паспорта через тире, например 1111-111111:")
-        // нужно написать проверку на корректность ввода данных
-        let id = String(readLine()!)
+        var id = String(readLine()!)
+        
+        while true {
+            if isCorrectPassport(id) == true {
+                break
+            } else {
+                print("паспорт введен неверно, повторите ввод")
+                id = String(readLine()!)
+            }
+        }
+        
         print("Введите ФИО через пробел:")
         let fullName = String(readLine()!)
         print("Введите год рождения:")
@@ -136,18 +144,23 @@ while doesProgramWork == true {
         let guest = Guest(passportNumber: id, fullName: fullName, birthYear: birthYear!, address: adress, purposeOfStay: purpose)
         hotel.insert(guest)
         print("Гость добавлен")
+        
     }else if answer == 2 {
         print("Номер пасспорта постояльца, которого необходимо удалить из базы:")
         let passportNumber = String(readLine()!)
         hotel.delete(passportNumber)
         print("Постоялец удален из базы")
+        
     } else if answer == 3 {
         print("Все зарегистрированные пользователи: ")
         hotel.printGuest()
+        
     } else if answer == 4{
         hotel.deleteAll()
         print("Все постояльцы удалены")
+        
     } else if answer == 5 {
+        // Еще номер, в котором он проживает
         print("Введите номер паспорта:")
         let passportNumber = String(readLine()!)
         
@@ -156,23 +169,55 @@ while doesProgramWork == true {
         } else {
             print("Пользователь не найден")
         }
+        
     } else if answer == 6 {
-        
-        
-        
-        print()
-        
-        
+        print("Введите ФИО постояльца: ")
+        let fullName = String(readLine()!)
+        let arrayGuests: [Guest] = hotel.searchByFullName(fullname: fullName)
+        for i in 0..<arrayGuests.count {
+            print(i+1)
+            print("Номер паспорта - \(arrayGuests[i].passportNumber)")
+            print("ФИО - \(arrayGuests[i].fullName)")
+        }
         
     } else if answer == 7 {
-        print("Для добавления номер в гостиницу необходимо указать дополнительные данные \n")
-        print("Укажите номер в формате ANNN: ")
-        //добавь проверку формата
-        let number = String(readLine()!)
+        // алгоритм поиска слова в тексте
+        
+        print("Для добавления номера в гостиницу необходимо указать дополнительные данные \n")
+        print("Укажите номер в формате ANNN , где ")
+        print("A - буква, обозначающая тип номера(L – люкс, P – полулюкс, O – одно- местный, M – многоместный)")
+        print("NNN - порядковый номер")
+        var number = String(readLine()!)
+        
+        while true {
+            if isCorrectRoomNumber(number) {
+                break
+            } else {
+                print("Некорректно, повторите ввод: ")
+                number = String(readLine()!)
+            }
+        }
+        
         print("Укажите количество мест в номере: ")
-        let numberOfSeats = String(readLine()!)
+        var numberOfSeats = String(readLine()!)
+        while true {
+            if let num = Int(numberOfSeats) {
+                break
+            } else {
+                print("Некорректно, повторите ввод: ")
+                numberOfSeats = String(readLine()!)
+            }
+        }
         print("Укажите количество комнат в номере: ")
-        let numberOfRooms = String(readLine()!)
+        var numberOfRooms = String(readLine()!)
+        while true {
+            if let num = Int(numberOfRooms) {
+                break
+            } else {
+                print("Некорректно, повторите ввод: ")
+                numberOfRooms = String(readLine()!)
+            }
+        }
         print("Укажите есть ли санузел (true/false)")
         let presenceOfBathroom = Bool(readLine()!)
         print("Укажите Оборудование")
@@ -180,30 +225,87 @@ while doesProgramWork == true {
         let room = HotelRoom(number: number, numberOfSeats: numberOfSeats, numberOfRooms: numberOfRooms, presenceOfABathroom: presenceOfBathroom!, equipment: equipment)
         hotelRooms.insert(room)
         print("Номер создан")
+        
     } else if answer == 8 {
         print("Введите номер, который вы хотите удалить")
         let number = String(readLine()!)
         hotelRooms.deleteRoom(number)
         print("Номер удален")
+        
     } else if answer == 9 {
         // Добавить массив
         print(hotelRooms.description)
+        
     } else if answer == 10 {
         hotelRooms.removeAll()
         print("Данные очищены")
+        
     } else if answer == 11 {
         print("Введите номер:")
         let number = String(readLine()!)
-        var room = hotelRooms.find(number)!
+        let room = hotelRooms.find(number)!
         // добавить постояльца
         print(room.getAllInformation())
+        
     } else if answer == 12 {
         print("Введите фрагменты оборудования через запятую с пробелом")
-        var equipment = String(readLine()!)
+        let equipment = String(readLine()!)
         // дописать по методичке
-        var result = hotelRooms.searchByEquipment(equipment)
+        let result = hotelRooms.searchByEquipment(equipment)
+        
     } else if answer == 13 {
-        print()
+        print("Введите серию и номер паспорта через тире, например 1111-111111:")
+        var id = String(readLine()!)
+        
+        while true {
+            if isCorrectPassport(id) == true{
+                if let a = hotel.search(id) {
+                    break
+                } else {
+                    print("Паспорт введен корректно, но пользователь не найден в базе. Повторите ввод")
+                    id = String(readLine()!)
+                }
+            } else {
+                print("паспорт введен неверно, повторите ввод")
+                id = String(readLine()!)
+            }
+        }
+        
+        print("Введите номер комнаты, в которую хотите заехать: ")
+        var number = String(readLine()!)
+        
+        while true {
+            if isCorrectRoomNumber(number) {
+                if let a = hotelRooms.find(number) {
+                    break
+                }
+                print("Номер введен корректно, но не найден в базе")
+            } else {
+                print("Некорректно, повторите ввод: ")
+                number = String(readLine()!)
+            }
+        }
+        
+        
+        print("Введите дату заезда: ")
+        let checkInData = String(readLine()!)
+        print("Введите дату вызаезда: ")
+        let checkOutData = String(readLine()!)
+        
+        var room = hotelRooms.find(number)!
+        if Int(room.numberOfSeats)! > room.countGuets {
+            room.addGuest()
+            var guestCheckIn = CheckInOut(passportId: id, number: number, checkInData: checkInData, checkOutData: checkOutData)
+            listGuests.append(value: guestCheckIn)
+            cocktailSort(&listGuests)
+        } else {
+            print("Все места в комнате заняты")
+        }
+        print("Постоялец заселен")
+        
+    } else if answer == 14 {
+       print()
+        
     }
     
     if answer! <= 0 || answer! > 14{

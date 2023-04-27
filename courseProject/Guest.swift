@@ -3,5 +3,5 @@ struct Guest {
     var fullName: String
     var birthYear: Int
     var address: String
-    var purposeOfStay: String
+    var purposeOfStay: String //цель визита
 }

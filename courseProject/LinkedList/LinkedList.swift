@@ -1,4 +1,3 @@
-
 class DNode<T> {
     var value: T?
     
@@ -212,6 +211,19 @@ struct DLinkedList<T> {
             count += 1
         }
         return count - 1
+    }
+    public func find(value: T)-> DNode<T>? {
+        var current = head
+        var count = 1
+        
+        while current != nil {
+            if current?.value == value {
+                return current
+            }
+            current = current?.next
+            
+        }
+        return nil
     }
     
     

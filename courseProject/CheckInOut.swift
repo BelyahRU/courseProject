@@ -10,6 +10,7 @@ struct CheckInOut {
         self.number = number
         self.checkInData = checkInData
         self.checkOutData = checkOutData
+        
     }
     func getCorrectNumber() -> Int {
         let currentNum = Int(number.trimmingCharacters(in: CharacterSet.letters))!
