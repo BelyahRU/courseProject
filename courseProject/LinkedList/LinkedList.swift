@@ -214,7 +214,6 @@ struct DLinkedList {
     }
     public func find(passportId: String) -> DNode? {
         var current = head
-        var count = 1
         
         while current != nil {
             if current?.value?.passportId == passportId {

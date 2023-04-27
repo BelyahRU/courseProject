@@ -11,19 +11,19 @@
 
 
  //guest information
-var hashTable = GuestHashTable(capacity: 10)
+//var hashTable = GuestHashTable(capacity: 10)
 
-let guest1 = Guest(passportNumber: "1234-567890", fullName: "Ivan Ivanov", birthYear: 1990, address: "Moscow", purposeOfStay: "Business")
+//let guest1 = Guest(passportNumber: "1234-567890", fullName: "Ivan Ivanov", birthYear: 1990, address: "Moscow", purposeOfStay: "Business")
+//
+//hashTable.insert(guest1)
+//
+//let guest2 = Guest(passportNumber: "9876-543210", fullName: "Anna Petrova", birthYear: 1985, address: "Saint Petersburg", purposeOfStay: "Vacation")
+//hashTable.insert(guest2)
+//
+//let guest3 = Guest(passportNumber: "5678-123456", fullName: "Sergey Smirnov", birthYear: 1978, address: "Kazan", purposeOfStay: "Business")
+//hashTable.insert(guest3)
 
-hashTable.insert(guest1)
-
-let guest2 = Guest(passportNumber: "9876-543210", fullName: "Anna Petrova", birthYear: 1985, address: "Saint Petersburg", purposeOfStay: "Vacation")
-hashTable.insert(guest2)
-
-let guest3 = Guest(passportNumber: "5678-123456", fullName: "Sergey Smirnov", birthYear: 1978, address: "Kazan", purposeOfStay: "Business")
-hashTable.insert(guest3)
-
-let foundGuest = hashTable.search("9876-543210")
+//let foundGuest = hashTable.search("9876-543210")
 //if let guest = foundGuest {
 //    print("Found guest: \(guest.fullName)")
 //}
@@ -36,18 +36,18 @@ let foundGuest = hashTable.search("9876-543210")
 
 
 // Hotel room data
-var room1 = HotelRoom(number: "L001", numberOfSeats: "2", numberOfRooms: "3", presenceOfABathroom: true, equipment: "Телевизор, ванна, кухня, 2 кровати")
-var room2 = HotelRoom(number: "L005", numberOfSeats: "1", numberOfRooms: "3", presenceOfABathroom: true, equipment: "Телевизор, окно, кухня, 2 кровати")
-var room3 = HotelRoom(number: "L302", numberOfSeats: "1", numberOfRooms: "3", presenceOfABathroom: true, equipment: "Котик, ванна, кухня, 2 кровати")
-var room4 = HotelRoom(number: "L201", numberOfSeats: "2", numberOfRooms: "3", presenceOfABathroom: true, equipment: "Прачка, ванна, кухня, 2 кровати")
-var room5 = HotelRoom(number: "L003", numberOfSeats: "2", numberOfRooms: "3", presenceOfABathroom: true, equipment: "Душ, ванна, кухня, 2 кровати")
+//var room1 = HotelRoom(number: "L001", numberOfSeats: "2", numberOfRooms: "3", presenceOfABathroom: true, equipment: "Телевизор, ванна, кухня, 2 кровати")
+//var room2 = HotelRoom(number: "L005", numberOfSeats: "1", numberOfRooms: "3", presenceOfABathroom: true, equipment: "Телевизор, окно, кухня, 2 кровати")
+//var room3 = HotelRoom(number: "L302", numberOfSeats: "1", numberOfRooms: "3", presenceOfABathroom: true, equipment: "Котик, ванна, кухня, 2 кровати")
+//var room4 = HotelRoom(number: "L201", numberOfSeats: "2", numberOfRooms: "3", presenceOfABathroom: true, equipment: "Прачка, ванна, кухня, 2 кровати")
+//var room5 = HotelRoom(number: "L003", numberOfSeats: "2", numberOfRooms: "3", presenceOfABathroom: true, equipment: "Душ, ванна, кухня, 2 кровати")
 
-var HotelRoomss = AVLTree()
-HotelRoomss.insert(room1)
-HotelRoomss.insert(room2)
-HotelRoomss.insert(room3)
-HotelRoomss.insert(room4)
-HotelRoomss.insert(room5)
+//var HotelRoomss = AVLTree()
+//HotelRoomss.insert(room1)
+//HotelRoomss.insert(room2)
+//HotelRoomss.insert(room3)
+//HotelRoomss.insert(room4)
+//HotelRoomss.insert(room5)
 //print(HotelRoomss.description)
 //print(HotelRoomss.deleteRoom("L003"))
 //print(HotelRoomss.description)
@@ -60,29 +60,29 @@ HotelRoomss.insert(room5)
 
 
 // check-in and check-out of guests.
-var checkIOg1 = CheckInOut(passportId: "1917-122955", number: "L408", checkInData: "20.02.2023", checkOutData: "30.04.2023")
-var checkIOg2 = CheckInOut(passportId: "1920-143955", number: "L508", checkInData: "30.12.2022", checkOutData: "31.04.2023")
-var checkIOg3 = CheckInOut(passportId: "4917-654955", number: "L008", checkInData: "10.02.2023", checkOutData: "20.04.2023")
-var checkIOg4 = CheckInOut(passportId: "1921-642952", number: "L933", checkInData: "20.02.2023", checkOutData: "30.02.2023")
-var checkIOg5 = CheckInOut(passportId: "4017-352955", number: "L001", checkInData: "20.01.2022", checkOutData: "30.02.2022")
-var checkIOg6 = CheckInOut(passportId: "4017-352955", number: "L409", checkInData: "20.01.2022", checkOutData: "30.02.2022")
-var checkIOg7 = CheckInOut(passportId: "4017-352955", number: "L000", checkInData: "20.01.2022", checkOutData: "30.02.2022")
-var list = DLinkedList()
-
-list.prepend(value: checkIOg1)
-list.prepend(value: checkIOg2)
-list.prepend(value: checkIOg3)
-list.prepend(value: checkIOg4)
-list.append(value: checkIOg5)
-list.append(value: checkIOg6)
-list.append(value: checkIOg7)
+//var checkIOg1 = CheckInOut(passportId: "1917-122955", number: "L408", checkInData: "20.02.2023", checkOutData: "30.04.2023")
+//var checkIOg2 = CheckInOut(passportId: "1920-143955", number: "L508", checkInData: "30.12.2022", checkOutData: "31.04.2023")
+//var checkIOg3 = CheckInOut(passportId: "4917-654955", number: "L008", checkInData: "10.02.2023", checkOutData: "20.04.2023")
+//var checkIOg4 = CheckInOut(passportId: "1921-642952", number: "L933", checkInData: "20.02.2023", checkOutData: "30.02.2023")
+//var checkIOg5 = CheckInOut(passportId: "4017-352955", number: "L001", checkInData: "20.01.2022", checkOutData: "30.02.2022")
+//var checkIOg6 = CheckInOut(passportId: "4017-352955", number: "L409", checkInData: "20.01.2022", checkOutData: "30.02.2022")
+//var checkIOg7 = CheckInOut(passportId: "4017-352955", number: "L000", checkInData: "20.01.2022", checkOutData: "30.02.2022")
+//var list = DLinkedList()
+//
+//list.prepend(value: checkIOg1)
+//list.prepend(value: checkIOg2)
+//list.prepend(value: checkIOg3)
+//list.prepend(value: checkIOg4)
+//list.append(value: checkIOg5)
+//list.append(value: checkIOg6)
+//list.append(value: checkIOg7)
 //print(list.getCountElements())
 
 //print(list.nodeAt(index: 1)!.value!)
 //list.insert(value: "apples", at: 2)
 //list.insert(node: coolNode, at: 3)
 
-list.printList()
+//list.printList()
 
 //cocktailSort(&list)
 //print(list.nodeAt(index: 2)!.value!.getCorrectNumber())
@@ -91,19 +91,59 @@ list.printList()
 //list.printList()
 
 
+print("Перед началом работы проограммы введите вместительность гостиницы: ")
+var capacity = Int(readLine()!)!
 
+var hotel = GuestHashTable(capacity: capacity) // Вместительность гостиницы
+let guest1 = Guest(passportNumber: "1234-567890", fullName: "Ivan Aleksandrovich Ivanov", birthYear: 1990, address: "Moscow", purposeOfStay: "Business")
+
+hotel.insert(guest1)
+
+let guest2 = Guest(passportNumber: "9876-543210", fullName: "Anna Evgenievna Petrova", birthYear: 1985, address: "Saint Petersburg", purposeOfStay: "Vacation")
+hotel.insert(guest2)
+
+let guest3 = Guest(passportNumber: "5678-123456", fullName: "Andrey Ivanovich Yakovlev", birthYear: 1978, address: "Yfa", purposeOfStay: "Travel")
+hotel.insert(guest3)
+let guest4 = Guest(passportNumber: "5864-201987", fullName: "Sergey Aleksandrovich Smirnov", birthYear: 2003, address: "Kazan", purposeOfStay: "Business")
+hotel.insert(guest4)
+let guest5 = Guest(passportNumber: "1917-402234", fullName: "Aleksandr Sergeevich Andreev", birthYear: 1965, address: "Kazan", purposeOfStay: "Business")
+hotel.insert(guest5)
+let guest6 = Guest(passportNumber: "4201-535325", fullName: "Sergey Aleksandrovich Smirnov", birthYear: 1987, address: "Saint Petersburg", purposeOfStay: "Travel")
+hotel.insert(guest6)
+let guest7 = Guest(passportNumber: "1923-524566", fullName: "Amina Nikolaevna Smirnova", birthYear: 1999, address: "Babaevo", purposeOfStay: "Travel")
+hotel.insert(guest7)
+
+
+
+var hotelRooms = AVLTree() // Номера гостиницы
+var room1 = HotelRoom(number: "L001", numberOfSeats: "2", numberOfRooms: "3", presenceOfABathroom: true, equipment: "телевизор, ванна, кухня, 2 кровати")
+var room2 = HotelRoom(number: "L005", numberOfSeats: "1", numberOfRooms: "3", presenceOfABathroom: true, equipment: "телевизор, окно, кухня, 2 кровати")
+var room3 = HotelRoom(number: "L302", numberOfSeats: "1", numberOfRooms: "3", presenceOfABathroom: true, equipment: "котик, ванна, кухня, 2 кровати")
+var room4 = HotelRoom(number: "L201", numberOfSeats: "2", numberOfRooms: "3", presenceOfABathroom: true, equipment: "прачка, ванна, кухня, 2 кровати")
+var room5 = HotelRoom(number: "L003", numberOfSeats: "2", numberOfRooms: "3", presenceOfABathroom: true, equipment: "душ, ванна, кухня, 2 кровати")
+
+hotelRooms.insert(room1)
+hotelRooms.insert(room2)
+hotelRooms.insert(room3)
+hotelRooms.insert(room4)
+hotelRooms.insert(room5)
 
 var listGuests = DLinkedList() // Список гостей
-var hotel = GuestHashTable(capacity: 999) // Вместительность гостиницы
-var hotelRooms = AVLTree() // Номера гостиницы
+var checkInguest1 = CheckInOut(passportId: "1234-567890", number: "L001", checkInData: "20.12.2022", checkOutData: "01.01.2023")
+room1.addGuest()
+
+var checkInguest2 = CheckInOut(passportId: "9876-543210", number: "L005", checkInData: "24.11.2022", checkOutData: "21.12.2022")
+room2.addGuest()
+
+var checkInguest3 = CheckInOut(passportId: "5678-123456", number: "L302", checkInData: "28.05.2023", checkOutData: "30.05.2023")
 print("Регистрация постояльцев в гостинице\n")
+room3.addGuest()
 
 var doesProgramWork = true
 while doesProgramWork == true {
-    // добавить функцию, с помощью которой пользователь выбирал бы вместительность отеля
-    print("Выберете что вы хотите сделать: \n")
+    print("\n Выберете что вы хотите сделать: \n")
     print("1.Зарегистрировать нового постояльца")
-    print("2.Удалить данные о постояльце")
+    print("2.Удалить данные о постояльцев")
     print("3.Просмотр всех зарегистрированных постояльцев")
     print("4.Очистка данных о постояльцах")
     print("5.Поиск постояльца по номеру паспорта")
@@ -119,6 +159,7 @@ while doesProgramWork == true {
     print("Для выхода из программы введите число, не соответствующее диапазону")
     let answer = Int(readLine()!)
     if answer! == 1 {
+        //Вдруг он уже есть в базе
         print("Для регистрации постояльца вам нужно будет ввести его данные")
         print("Введите серию и номер паспорта через тире, например 1111-111111:")
         var id = String(readLine()!)
@@ -146,7 +187,7 @@ while doesProgramWork == true {
         print("Гость добавлен")
         
     }else if answer == 2 {
-        print("Номер пасспорта постояльца, которого необходимо удалить из базы:")
+        print("Номер паспорта постояльца, которого необходимо удалить из базы:")
         let passportNumber = String(readLine()!)
         hotel.delete(passportNumber)
         print("Постоялец удален из базы")
@@ -248,6 +289,7 @@ while doesProgramWork == true {
         print(room.getAllInformation())
         
     } else if answer == 12 {
+        // алгоритм поиска
         print("Введите фрагменты оборудования через запятую с пробелом")
         let equipment = String(readLine()!)
         // дописать по методичке
@@ -259,7 +301,7 @@ while doesProgramWork == true {
         
         while true {
             if isCorrectPassport(id) == true{
-                if let a = hotel.search(id) {
+                if let _ = hotel.search(id) {
                     break
                 } else {
                     print("Паспорт введен корректно, но пользователь не найден в базе. Повторите ввод")
@@ -295,7 +337,7 @@ while doesProgramWork == true {
         var room = hotelRooms.find(number)!
         if Int(room.numberOfSeats)! > room.countGuets {
             room.addGuest()
-            var guestCheckIn = CheckInOut(passportId: id, number: number, checkInData: checkInData, checkOutData: checkOutData)
+            let guestCheckIn = CheckInOut(passportId: id, number: number, checkInData: checkInData, checkOutData: checkOutData)
             listGuests.append(value: guestCheckIn)
             cocktailSort(&listGuests)
         } else {
@@ -309,7 +351,7 @@ while doesProgramWork == true {
         
         while true {
             if isCorrectPassport(id) == true{
-                if let a = hotel.search(id) {
+                if let _ = hotel.search(id) {
                     break
                 } else {
                     print("Паспорт введен корректно, но пользователь не найден в базе. Повторите ввод")
@@ -321,7 +363,7 @@ while doesProgramWork == true {
             }
         }
         
-        var nodeGuest = listGuests.find(passportId: id)
+        let nodeGuest = listGuests.find(passportId: id)
         listGuests.remove(node: nodeGuest!)
         print("Пользователь удален")
     }

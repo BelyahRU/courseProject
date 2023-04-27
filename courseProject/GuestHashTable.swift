@@ -71,12 +71,14 @@ class GuestHashTable {
         self.table = Array(repeating: nil, count: capacity)
     }
     func printGuest(){
-        var allGuests = ""
-        for i in 0..<count{
-            if i == count - 1 {
-                allGuests += table[i]!.fullName
-            } else {
-                allGuests += table[i]!.fullName+", "
+        var allGuests: [String] = []
+        for i in 0 ..< table.count{
+            if table[i] != nil {
+                if i == count - 1 {
+                    allGuests.append(table[i]!.fullName)
+                } else {
+                    allGuests.append(table[i]!.fullName)
+                }
             }
         }
         print(allGuests)
@@ -86,8 +88,10 @@ class GuestHashTable {
     func searchByFullName(fullname: String) -> [Guest]{
         var arrayGuests: [Guest] = []
         for i in 0 ..< table.count {
-            if fullname == table[i]!.fullName {
-                arrayGuests.append(table[i]!)
+            if table[i] != nil {
+                if fullname == table[i]!.fullName {
+                    arrayGuests.append(table[i]!)
+                }
             }
         }
         return arrayGuests
