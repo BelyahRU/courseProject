@@ -1,35 +1,35 @@
-class DNode<T> {
-    var value: T?
+class DNode {
+    var value: CheckInOut?
     
-    var next: DNode<T>?
+    var next: DNode?
     
-    var previous: DNode<T>?
+    var previous: DNode?
     
-    init(value: T?) {
+    init(value: CheckInOut) {
         self.value = value
     }
 }
 
-struct DLinkedList<T> {
-    var head: DNode<T>?
+struct DLinkedList {
+    var head: DNode?
     
-    var tail: DNode<T>?
+    var tail: DNode?
     
     var isEmpty: Bool {
         return head == nil
     }
     
-    var first: DNode<T>? {
+    var first: DNode? {
         print(head?.value ?? "List is empty")
         return head
     }
     
-    var last: DNode<T>? {
+    var last: DNode? {
         print(tail?.value ?? "List is empty")
         return tail
     }
     
-    public mutating func prepend(value: T) {
+    public mutating func prepend(value: CheckInOut) {
         let newNode = DNode(value: value)
         
         if let headNode = head {
@@ -54,7 +54,7 @@ struct DLinkedList<T> {
         }
     }
     
-    public mutating func append(value: T) {
+    public mutating func append(value: CheckInOut) {
         let newNode = DNode(value: value)
         
         if let tailNode = tail {
@@ -67,8 +67,8 @@ struct DLinkedList<T> {
         tail = newNode
     }
     
-    public func nodeAt(index: Int) -> DNode<T>? {
-        var node: DNode<T>?
+    public func nodeAt(index: Int) -> DNode? {
+        var node: DNode?
         var current = head
         
         for _ in 0..<index {
@@ -84,7 +84,7 @@ struct DLinkedList<T> {
         return node
     }
     
-    public mutating func insert(value: T, at index: Int) {
+    public mutating func insert(value: CheckInOut, at index: Int) {
         let newNode = DNode(value: value)
         
         if index == 0, tail == nil {
@@ -111,7 +111,7 @@ struct DLinkedList<T> {
         nodeAtIndex.previous = newNode
     }
     
-    public mutating func insert(node: DNode<T>, at index: Int) {
+    public mutating func insert(node: DNode, at index: Int) {
         if index == 0, tail == nil {
             head = node
             tail = node
@@ -157,7 +157,7 @@ struct DLinkedList<T> {
         nodeAtIndex = nil
     }
     
-    public mutating func remove(node: DNode<T>) -> T {
+    public mutating func remove(node: DNode) -> CheckInOut {
         let nextNode = node.next
         let previousNode = node.previous
         
@@ -212,13 +212,13 @@ struct DLinkedList<T> {
         }
         return count - 1
     }
-    public func find(value: T)-> DNode<T>? {
+    public func find(passportId: String) -> DNode? {
         var current = head
         var count = 1
         
         while current != nil {
-            if current?.value == value {
-                return current
+            if current?.value?.passportId == passportId {
+                return current!
             }
             current = current?.next
             

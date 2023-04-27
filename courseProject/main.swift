@@ -67,7 +67,7 @@ var checkIOg4 = CheckInOut(passportId: "1921-642952", number: "L933", checkInDat
 var checkIOg5 = CheckInOut(passportId: "4017-352955", number: "L001", checkInData: "20.01.2022", checkOutData: "30.02.2022")
 var checkIOg6 = CheckInOut(passportId: "4017-352955", number: "L409", checkInData: "20.01.2022", checkOutData: "30.02.2022")
 var checkIOg7 = CheckInOut(passportId: "4017-352955", number: "L000", checkInData: "20.01.2022", checkOutData: "30.02.2022")
-var list = DLinkedList<CheckInOut>()
+var list = DLinkedList()
 
 list.prepend(value: checkIOg1)
 list.prepend(value: checkIOg2)
@@ -82,7 +82,7 @@ list.append(value: checkIOg7)
 //list.insert(value: "apples", at: 2)
 //list.insert(node: coolNode, at: 3)
 
-//list.printList()
+list.printList()
 
 //cocktailSort(&list)
 //print(list.nodeAt(index: 2)!.value!.getCorrectNumber())
@@ -93,7 +93,7 @@ list.append(value: checkIOg7)
 
 
 
-var listGuests = DLinkedList<CheckInOut>() // Список гостей
+var listGuests = DLinkedList() // Список гостей
 var hotel = GuestHashTable(capacity: 999) // Вместительность гостиницы
 var hotelRooms = AVLTree() // Номера гостиницы
 print("Регистрация постояльцев в гостинице\n")
@@ -304,8 +304,26 @@ while doesProgramWork == true {
         print("Постоялец заселен")
         
     } else if answer == 14 {
-       print()
+        print("Введите номер паспорта клиента, которого хотите выселить:")
+        var id = String(readLine()!)
         
+        while true {
+            if isCorrectPassport(id) == true{
+                if let a = hotel.search(id) {
+                    break
+                } else {
+                    print("Паспорт введен корректно, но пользователь не найден в базе. Повторите ввод")
+                    id = String(readLine()!)
+                }
+            } else {
+                print("паспорт введен неверно, повторите ввод")
+                id = String(readLine()!)
+            }
+        }
+        
+        var nodeGuest = listGuests.find(passportId: id)
+        listGuests.remove(node: nodeGuest!)
+        print("Пользователь удален")
     }
     
     if answer! <= 0 || answer! > 14{
