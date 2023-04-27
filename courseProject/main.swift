@@ -165,7 +165,7 @@ while doesProgramWork == true {
         
         while true {
             if isCorrectPassport(id) == true {
-                if let a = hotel.search(id) {
+                if hotel.search(id) != nil {
                     print("Пользователь уже есть в базе данных")
                     id = String(readLine()!)
                 } else {
@@ -188,29 +188,43 @@ while doesProgramWork == true {
         
         let guest = Guest(passportNumber: id, fullName: fullName, birthYear: birthYear!, address: adress, purposeOfStay: purpose)
         hotel.insert(guest)
-        print("Гость добавлен")
+        print("Постоялец зарегестрированн")
         
     }else if answer == 2 {
         print("Номер паспорта постояльца, которого необходимо удалить из базы:")
         let passportNumber = String(readLine()!)
         hotel.delete(passportNumber)
-        print("Постоялец удален из базы")
+        print("Данные о постояльце удалены")
         
     } else if answer == 3 {
-        print("Все зарегистрированные пользователи: ")
+        print("Все зарегистрированные постояльцы: ")
         hotel.printGuest()
         
     } else if answer == 4{
         hotel.deleteAll()
-        print("Все постояльцы удалены")
+        print("Данные о постояльцах очищены")
         
     } else if answer == 5 {
+        // корректно вывести данные
         // Еще номер, в котором он проживает
         print("Введите номер паспорта:")
         let passportNumber = String(readLine()!)
         
         if let answ = hotel.search(passportNumber) {
-            print(answ)
+            print("ФИО постояльца - \(answ.fullName)")
+            print("Дата рождения - \(answ.birthYear)")
+            print("Адрес - \(answ.address)")
+            print("Номер паспорта - \(answ.passportNumber)")
+            print("Цель визита - \(answ.purposeOfStay)")
+            if let roomAnsw = listGuests.find(passportId: answ.passportNumber)!.value {
+                print("Проживает в номере \(roomAnsw.number)")
+                print("Количество комнат в этом номере -\(hotelRooms.find(roomAnsw.number)!.numberOfRooms)")
+                print("Оборудование: \(hotelRooms.find(roomAnsw.number)!.equipment)")
+                
+            } else {
+                print("В данный момент не проживает в отеле")
+                
+            }
         } else {
             print("Пользователь не найден")
         }

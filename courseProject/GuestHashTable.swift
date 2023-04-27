@@ -71,17 +71,11 @@ class GuestHashTable {
         self.table = Array(repeating: nil, count: capacity)
     }
     func printGuest(){
-        var allGuests: [String] = []
         for i in 0 ..< table.count{
             if table[i] != nil {
-                if i == count - 1 {
-                    allGuests.append(table[i]!.fullName)
-                } else {
-                    allGuests.append(table[i]!.fullName)
-                }
+                print("\nПостоялец - \(table[i]!.fullName), его номер паспорта - \(table[i]!.passportNumber)")
             }
         }
-        print(allGuests)
     }
     
     
