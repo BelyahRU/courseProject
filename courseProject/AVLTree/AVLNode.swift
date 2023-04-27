@@ -37,7 +37,8 @@ extension AVLNode: CustomStringConvertible {
     }
     
     func diagram(for node: AVLNode?,_ top: String = "",_ root: String = "",_ bottom: String = "") -> String {
-
+        
+        
         guard let node = node else {
             return root + "nil\n"
         }

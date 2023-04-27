@@ -2,17 +2,18 @@ import Foundation
 
 class AVLTree {
     var root: AVLNode?
+    var allNumbers: [String] = []
 }
 extension AVLTree {
     
     func insert(_ value: HotelRoom) {
-        
+        allNumbers.append(value.number)
         root = insert(from: root, value: value)
     }
     func insert(from node: AVLNode?, value: HotelRoom) -> AVLNode {
-            guard let node = node else {
-                return AVLNode(value: value)
-            }
+        guard let node = node else {
+            return AVLNode(value: value)
+        }
 
         if value.getCorrectNumber() < node.value.getCorrectNumber() {
                 node.leftChild = insert(from: node.leftChild, value: value)
@@ -30,8 +31,8 @@ extension AVLTree {
 extension AVLTree {
     
     public func remove(_ value: HotelRoom) {
-            
-            root = remove(node: root, value: value)
+        allNumbers.remove(at: allNumbers.firstIndex(of: value.number)!)
+        root = remove(node: root, value: value)
     }
     private func remove(node: AVLNode?, value: HotelRoom) -> AVLNode? {
             guard let node = node else {
@@ -76,6 +77,7 @@ extension AVLTree {
 
 extension AVLTree {
     func removeAll() {
+        allNumbers = []
         root = nil
     }
 }

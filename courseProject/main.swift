@@ -138,6 +138,9 @@ room2.addGuest()
 var checkInguest3 = CheckInOut(passportId: "5678-123456", number: "L302", checkInData: "28.05.2023", checkOutData: "30.05.2023")
 print("Регистрация постояльцев в гостинице\n")
 room3.addGuest()
+listGuests.append(value: checkInguest1)
+listGuests.append(value: checkInguest2)
+listGuests.append(value: checkInguest3)
 
 var doesProgramWork = true
 while doesProgramWork == true {
@@ -205,22 +208,17 @@ while doesProgramWork == true {
         print("Данные о постояльцах очищены")
         
     } else if answer == 5 {
-        // корректно вывести данные
-        // Еще номер, в котором он проживает
         print("Введите номер паспорта:")
         let passportNumber = String(readLine()!)
         
         if let answ = hotel.search(passportNumber) {
-            print("ФИО постояльца - \(answ.fullName)")
+            print("\nФИО постояльца - \(answ.fullName)")
             print("Дата рождения - \(answ.birthYear)")
             print("Адрес - \(answ.address)")
             print("Номер паспорта - \(answ.passportNumber)")
             print("Цель визита - \(answ.purposeOfStay)")
-            if let roomAnsw = listGuests.find(passportId: answ.passportNumber)!.value {
-                print("Проживает в номере \(roomAnsw.number)")
-                print("Количество комнат в этом номере -\(hotelRooms.find(roomAnsw.number)!.numberOfRooms)")
-                print("Оборудование: \(hotelRooms.find(roomAnsw.number)!.equipment)")
-                
+            if let roomAnsw = listGuests.find(passportId: answ.passportNumber)?.value {
+                print( hotelRooms.find(roomAnsw.number)!.getAllInformation())
             } else {
                 print("В данный момент не проживает в отеле")
                 
@@ -234,14 +232,13 @@ while doesProgramWork == true {
         let fullName = String(readLine()!)
         let arrayGuests: [Guest] = hotel.searchByFullName(fullname: fullName)
         for i in 0..<arrayGuests.count {
-            print(i+1)
+            print("\n\(i+1) найденный постоялец: ")
             print("Номер паспорта - \(arrayGuests[i].passportNumber)")
             print("ФИО - \(arrayGuests[i].fullName)")
         }
         
     } else if answer == 7 {
-        // алгоритм поиска слова в тексте
-        
+        //вдруг такой номер уже есть?
         print("Для добавления номера в гостиницу необходимо указать дополнительные данные \n")
         print("Укажите номер в формате ANNN , где ")
         print("A - буква, обозначающая тип номера(L – люкс, P – полулюкс, O – одно- местный, M – многоместный)")
@@ -250,7 +247,12 @@ while doesProgramWork == true {
         
         while true {
             if isCorrectRoomNumber(number) {
-                break
+                if hotelRooms.find(number) == nil {
+                    break
+                } else {
+                    print("Гостиничный номер с данным номером уже существует, повторите ввод")
+                    number = String(readLine()!)
+                }
             } else {
                 print("Некорректно, повторите ввод: ")
                 number = String(readLine()!)
@@ -287,12 +289,37 @@ while doesProgramWork == true {
         
     } else if answer == 8 {
         print("Введите номер, который вы хотите удалить")
-        let number = String(readLine()!)
+        var number = String(readLine()!)
+        while true {
+            if isCorrectRoomNumber(number) {
+                if hotelRooms.find(number) != nil {
+                    break
+                } else {
+                    print("Данного номера не существует")
+                    number = String(readLine()!)
+                }
+            } else {
+                print("Некорректно, повторите ввод: ")
+                number = String(readLine()!)
+            }
+        }
         hotelRooms.deleteRoom(number)
         print("Номер удален")
         
     } else if answer == 9 {
         // Добавить массив
+        let arrayRooms = hotelRooms.allNumbers
+        if arrayRooms == [] {
+            print("Номеров нет")
+        }
+        for i in 0..<arrayRooms.count {
+            let room = hotelRooms.find(arrayRooms[i])!
+            print("\nНомер \(room.number)")
+            print("Количество комнат в этом номере - \(hotelRooms.find(room.number)!.numberOfRooms)")
+            print("Оборудование: \(hotelRooms.find(room.number)!.equipment)")
+            
+        }
+        print("\nНомера в виде АВЛ-дерева:")
         print(hotelRooms.description)
         
     } else if answer == 10 {
