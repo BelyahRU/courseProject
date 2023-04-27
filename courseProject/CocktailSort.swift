@@ -10,7 +10,7 @@ func cocktailSort(_ linkedList: inout DLinkedList) {
             
             if linkedList.nodeAt(index: i)!.value!.getCorrectNumber() > linkedList.nodeAt(index: i+1)!.value!.getCorrectNumber(){
                 
-                var a = linkedList.nodeAt(index: i)!.value!
+                let a = linkedList.nodeAt(index: i)!.value!
                 if i == linkedList.getCountElements() - 2 {
                     linkedList.remove(node: linkedList.nodeAt(index: i)!)
                     linkedList.append(value: a)
@@ -37,7 +37,7 @@ func cocktailSort(_ linkedList: inout DLinkedList) {
         for i in stride(from: endIndex - 1, to: beginIndex - 1, by: -1) {
             if linkedList.nodeAt(index: i)!.value!.getCorrectNumber() > linkedList.nodeAt(index: i+1)!.value!.getCorrectNumber() {
 
-                var a = linkedList.nodeAt(index: i)!
+                let a = linkedList.nodeAt(index: i)!
                 linkedList.remove(node: linkedList.nodeAt(index: i)!)
                 linkedList.insert(node: a, at: i + 1)
                 swapped = true

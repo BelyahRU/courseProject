@@ -16,7 +16,11 @@
 		1A97E95629F8A6CF00CA5AFA /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A97E95529F8A6CF00CA5AFA /* LinkedList.swift */; };
 		1A97E95C29F8AB2C00CA5AFA /* CheckInOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A97E95B29F8AB2C00CA5AFA /* CheckInOut.swift */; };
 		1A97E95E29F8BA1D00CA5AFA /* CocktailSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A97E95D29F8BA1D00CA5AFA /* CocktailSort.swift */; };
-		1AEF054629FA731B00D01E0F /* СorrectnessСhecks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEF054529FA731B00D01E0F /* СorrectnessСhecks.swift */; };
+		1AEF054A29FB28E000D01E0F /* getPassportNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEF054929FB28E000D01E0F /* getPassportNumber.swift */; };
+		1AEF054D29FB2B5000D01E0F /* getRoomNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEF054C29FB2B5000D01E0F /* getRoomNumber.swift */; };
+		1AEF054F29FB2FD900D01E0F /* checkRoomInData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEF054E29FB2FD900D01E0F /* checkRoomInData.swift */; };
+		1AEF055129FB2FF300D01E0F /* CheckPassportInData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEF055029FB2FF300D01E0F /* CheckPassportInData.swift */; };
+		1AEF055329FB34A000D01E0F /* getIntNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEF055229FB34A000D01E0F /* getIntNumber.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -42,7 +46,11 @@
 		1A97E95529F8A6CF00CA5AFA /* LinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedList.swift; sourceTree = "<group>"; };
 		1A97E95B29F8AB2C00CA5AFA /* CheckInOut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInOut.swift; sourceTree = "<group>"; };
 		1A97E95D29F8BA1D00CA5AFA /* CocktailSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailSort.swift; sourceTree = "<group>"; };
-		1AEF054529FA731B00D01E0F /* СorrectnessСhecks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "СorrectnessСhecks.swift"; sourceTree = "<group>"; };
+		1AEF054929FB28E000D01E0F /* getPassportNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getPassportNumber.swift; sourceTree = "<group>"; };
+		1AEF054C29FB2B5000D01E0F /* getRoomNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getRoomNumber.swift; sourceTree = "<group>"; };
+		1AEF054E29FB2FD900D01E0F /* checkRoomInData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = checkRoomInData.swift; sourceTree = "<group>"; };
+		1AEF055029FB2FF300D01E0F /* CheckPassportInData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckPassportInData.swift; sourceTree = "<group>"; };
+		1AEF055229FB34A000D01E0F /* getIntNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getIntNumber.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,11 +83,11 @@
 		1A948E9B29F6E3770072C915 /* courseProject */ = {
 			isa = PBXGroup;
 			children = (
+				1AEF054B29FB2B2E00D01E0F /* Functions */,
 				1A97E95A29F8AB0100CA5AFA /* CheckInOut */,
 				1A97E95929F8AAFD00CA5AFA /* HotelRooms */,
 				1A948EA529F6F3960072C915 /* Guests */,
 				1A948E9C29F6E3770072C915 /* main.swift */,
-				1AEF054529FA731B00D01E0F /* СorrectnessСhecks.swift */,
 			);
 			path = courseProject;
 			sourceTree = "<group>";
@@ -127,6 +135,18 @@
 				1A97E95D29F8BA1D00CA5AFA /* CocktailSort.swift */,
 			);
 			name = CheckInOut;
+			sourceTree = "<group>";
+		};
+		1AEF054B29FB2B2E00D01E0F /* Functions */ = {
+			isa = PBXGroup;
+			children = (
+				1AEF054929FB28E000D01E0F /* getPassportNumber.swift */,
+				1AEF054C29FB2B5000D01E0F /* getRoomNumber.swift */,
+				1AEF054E29FB2FD900D01E0F /* checkRoomInData.swift */,
+				1AEF055029FB2FF300D01E0F /* CheckPassportInData.swift */,
+				1AEF055229FB34A000D01E0F /* getIntNumber.swift */,
+			);
+			path = Functions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -187,16 +207,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AEF054D29FB2B5000D01E0F /* getRoomNumber.swift in Sources */,
 				1A97E95C29F8AB2C00CA5AFA /* CheckInOut.swift in Sources */,
 				1A948E9D29F6E3770072C915 /* main.swift in Sources */,
 				1A97E95029F892F900CA5AFA /* HotelRoom.swift in Sources */,
 				1A97E95E29F8BA1D00CA5AFA /* CocktailSort.swift in Sources */,
+				1AEF055329FB34A000D01E0F /* getIntNumber.swift in Sources */,
 				1A97E94C29F8921300CA5AFA /* AVLNode.swift in Sources */,
 				1A948EA729F6F3B00072C915 /* Guest.swift in Sources */,
 				1A948EA929F6F3D20072C915 /* GuestHashTable.swift in Sources */,
+				1AEF054F29FB2FD900D01E0F /* checkRoomInData.swift in Sources */,
+				1AEF055129FB2FF300D01E0F /* CheckPassportInData.swift in Sources */,
 				1A97E94E29F8922B00CA5AFA /* AVLTree.swift in Sources */,
-				1AEF054629FA731B00D01E0F /* СorrectnessСhecks.swift in Sources */,
 				1A97E95629F8A6CF00CA5AFA /* LinkedList.swift in Sources */,
+				1AEF054A29FB28E000D01E0F /* getPassportNumber.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

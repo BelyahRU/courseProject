@@ -52,7 +52,7 @@ class GuestHashTable {
     }
     
     
-    func delete(_ passportNumber: String) {
+    func delete(_ passportNumber: String) -> Bool{
         count -= 1
         var index = hash(passportNumber)
         var i = 1
@@ -60,11 +60,12 @@ class GuestHashTable {
             if table[index]?.passportNumber == passportNumber {
                 table[index] = nil
                 size -= 1
-                return
+                return true
             }
             index = getNextIndex(index, i)
             i += 1
         }
+        return false
     }
     func deleteAll() {
         count = 0

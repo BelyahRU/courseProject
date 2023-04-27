@@ -225,14 +225,27 @@ struct DLinkedList {
         return nil
     }
     
-    public func findPassport(room: HotelRoom) -> String? {
+    public func findPassport(room: HotelRoom) -> [String] {
         var current = head
+        var array: [String] = []
         while current != nil {
             if current?.value?.number == room.number {
-                return current?.value?.passportId
+                array.append(current!.value!.passportId)
             }
+            current = current?.next
         }
-        return nil
+        return array
+    }
+    public func getCountGuests(room: HotelRoom) -> Int{
+        var current = head
+        var count = 0
+        while current != nil {
+            if current?.value?.number == room.number {
+                count += 1
+            }
+            current = current?.next
+        }
+        return count 
     }
     
     

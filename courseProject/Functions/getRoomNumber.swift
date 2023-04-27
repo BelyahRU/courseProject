@@ -1,29 +1,22 @@
-func isCorrectPassport(_ passportNumber: String) -> Bool {
-    var arr = Array(passportNumber)
-    var flag = true
-    if arr.count == 11 {
-        for i in 0...10 {
-            if flag == false {
-                break
-            }
-            if i >= 0 && i <= 3 && arr[i].isNumber {
-                flag = true
-            } else if i == 4 && arr[i] == "-" {
-                flag = true
-            } else if i > 4 && i <= 10 && arr[i].isNumber {
-                flag = true
-            } else {
-                flag = false
-            }
+func getRoomNumber() -> String {
+    print("Укажите номер в формате ANNN , где ")
+    print("A - буква, обозначающая тип номера(L – люкс, P – полулюкс, O – одно- местный, M – многоместный)")
+    print("NNN - порядковый номер")
+    var number = String(readLine()!)
+    
+    while true {
+        if isCorrectRoomNumber(number) {
+            break
+        } else {
+            print("Некорректно, повторите ввод: ")
+            number = String(readLine()!)
         }
-    } else {
-        flag = false
     }
-    return flag
+    return number
 }
 
 func isCorrectRoomNumber(_ number: String) -> Bool{
-    var arr = Array(number)
+    let arr = Array(number)
     var flag = true
     if arr.count == 4 {
         if arr[0] == "L" || arr[0] == "P" || arr[0] == "O" || arr[0] == "M" {
