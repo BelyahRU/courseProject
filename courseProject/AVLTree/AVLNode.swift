@@ -1,41 +1,45 @@
+// узел авл-дерева
 class AVLNode {
     
-    var value: HotelRoom
+    var value: HotelRoom // значение, находящееся в узле АВЛ-дерева
     
-    var leftChild: AVLNode?
+    var leftChild: AVLNode? // левая ветка
     
-    var rightChild: AVLNode?
+    var rightChild: AVLNode? // правая ветка
     
-    var height = 0
+    var height = 0 // высота дерева
     
+    // инициализатор
     init(value: HotelRoom) {
         self.value = value
     }
     
+    // свойство, возвращающее разницу между ветвями АВЛ-дерева
     var balanceFactor: Int {
         return leftHeight - rightHeight
     }
     
+    // высота левой ветки
     var leftHeight: Int {
         return leftChild?.height ?? -1
     }
     
+    // высота правой ветки
     var rightHeight: Int {
         return rightChild?.height ?? -1
     }
     
     
     
-    var min: AVLNode {
-        leftChild?.min ?? self
-    }
 }
 extension AVLNode: CustomStringConvertible {
-
+    
+    // свойство, вызывающее распечатывание дерева
     var description: String {
         return diagram(for: self)
     }
     
+    // метод, возвращающий распечатанной дерево
     func diagram(for node: AVLNode?,_ top: String = "",_ root: String = "",_ bottom: String = "") -> String {
         
         
@@ -56,6 +60,7 @@ extension AVLNode: CustomStringConvertible {
 // прямой обход авл-дерева
 extension AVLNode {
     
+    // посиция в значения в АВЛ дереве
     func positionInTree(_ number: String, _ currentValue: inout HotelRoom?) {
      
         if value.number == number {
@@ -65,6 +70,8 @@ extension AVLNode {
         leftChild?.positionInTree(number, &currentValue)
         rightChild?.positionInTree(number, &currentValue)
     }
+    
+    // Алгоритм Боуера...
     func positionInTreeByEquipment(_ equipment: String, _ array: inout [HotelRoom]) {
         let set1 = Set(equipment.components(separatedBy: ", ").map { $0.trimmingCharacters(in: .whitespacesAndNewlines) })
 

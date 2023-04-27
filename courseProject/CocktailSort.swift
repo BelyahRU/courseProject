@@ -1,3 +1,4 @@
+// шейкерная сортировка
 func cocktailSort(_ linkedList: inout DLinkedList) {
     var beginIndex = 0
     var endIndex = linkedList.getCountElements() - 1

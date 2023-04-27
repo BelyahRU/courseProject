@@ -1,3 +1,5 @@
+// функция, проверяющая есть ли комната в АВЛ-дереве
+// выводит корректную строку
 func checkRoomInData() -> String {
     var number = getRoomNumber()
     

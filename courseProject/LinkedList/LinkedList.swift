@@ -1,34 +1,37 @@
+// узел списка
 class DNode {
-    var value: CheckInOut?
+    var value: CheckInOut? // значение
     
-    var next: DNode?
+    var next: DNode? // следующий элемент
     
-    var previous: DNode?
+    var previous: DNode? // предыдущий элемент
     
-    init(value: CheckInOut) {
+    init(value: CheckInOut) { // инициализация значения
         self.value = value
     }
 }
 
+// линейный двунаправленный список
 struct DLinkedList {
-    var head: DNode?
+    var head: DNode? // голова списка
     
-    var tail: DNode?
+    var tail: DNode? // тело списка
     
-    var isEmpty: Bool {
+    var isEmpty: Bool { // проверка на пустосту
         return head == nil
     }
     
     var first: DNode? {
-        print(head?.value ?? "List is empty")
+        print(head?.value ?? "List is empty") // первый элемент списка
         return head
     }
     
-    var last: DNode? {
+    var last: DNode? { // последний элемент списка
         print(tail?.value ?? "List is empty")
         return tail
     }
     
+    // метод, позволяющий вставить значение в начало списка
     public mutating func prepend(value: CheckInOut) {
         let newNode = DNode(value: value)
         
@@ -54,6 +57,7 @@ struct DLinkedList {
         }
     }
     
+    // метод, позволяющий вставить элемент в конец списка
     public mutating func append(value: CheckInOut) {
         let newNode = DNode(value: value)
         
@@ -67,6 +71,7 @@ struct DLinkedList {
         tail = newNode
     }
     
+    // с помощью этого метода узел вставляется в заданное индексом место в списке
     public func nodeAt(index: Int) -> DNode? {
         var node: DNode?
         var current = head
@@ -84,6 +89,7 @@ struct DLinkedList {
         return node
     }
     
+    // метод, с помощью которого значение вставляется в заданное место индексом в списке
     public mutating func insert(value: CheckInOut, at index: Int) {
         let newNode = DNode(value: value)
         
@@ -110,7 +116,7 @@ struct DLinkedList {
         newNode.next = nodeAtIndex
         nodeAtIndex.previous = newNode
     }
-    
+    // метод, с помощью которого узел вставляется в заданное место индексом в списке
     public mutating func insert(node: DNode, at index: Int) {
         if index == 0, tail == nil {
             head = node
@@ -134,6 +140,7 @@ struct DLinkedList {
         node.next = nodeAtIndex
     }
     
+    // метод, с помощью которого удаляется узел, на заданном индексом месте в списке
     public mutating func remove(at index: Int) {
         var nodeAtIndex = nodeAt(index: index)
         guard nodeAtIndex != nil else {
@@ -156,7 +163,7 @@ struct DLinkedList {
         
         nodeAtIndex = nil
     }
-    
+    // метод, удаляющя узел, возвращает значение этого узла
     public mutating func remove(node: DNode) -> CheckInOut {
         let nextNode = node.next
         let previousNode = node.previous
@@ -177,6 +184,7 @@ struct DLinkedList {
         return node.value!
     }
     
+    // метод, которыйудаляяет все элементы списка
     public mutating func removeAll() {
         head = nil
         tail = nil
@@ -203,6 +211,8 @@ struct DLinkedList {
             print("")
         }
     }
+    
+    // метод, который возвращает количество элементов в списке
     public func getCountElements()->Int {
         var current = head
         var count = 1
@@ -212,6 +222,7 @@ struct DLinkedList {
         }
         return count - 1
     }
+    // метод, который находит номер паспорта в списке и возвращает узел
     public func find(passportId: String) -> DNode? {
         var current = head
         
@@ -225,6 +236,7 @@ struct DLinkedList {
         return nil
     }
     
+    // метод, который находит массив паспортов людей, которые живут в комнате
     public func findPassport(room: HotelRoom) -> [String] {
         var current = head
         var array: [String] = []
@@ -236,6 +248,8 @@ struct DLinkedList {
         }
         return array
     }
+    
+    // метод, возвращающий количество людей в списке
     public func getCountGuests(room: HotelRoom) -> Int{
         var current = head
         var count = 0

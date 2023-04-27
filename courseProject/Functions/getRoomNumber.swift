@@ -1,3 +1,4 @@
+// функция получения номера гостиницы из строки
 func getRoomNumber() -> String {
     print("Укажите номер в формате ANNN , где ")
     print("A - буква, обозначающая тип номера(L – люкс, P – полулюкс, O – одно- местный, M – многоместный)")
@@ -15,6 +16,7 @@ func getRoomNumber() -> String {
     return number
 }
 
+// функция, проверяющая корректность ввода данных
 func isCorrectRoomNumber(_ number: String) -> Bool{
     let arr = Array(number)
     var flag = true

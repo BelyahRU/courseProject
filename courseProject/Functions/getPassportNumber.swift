@@ -1,3 +1,4 @@
+// функция получения паспорта, путем чтения строки
 func getPassportNumber() -> String{
     print("Введите серию и номер паспорта через тире, например 1111-111111:")
     var id = String(readLine()!)
@@ -11,6 +12,7 @@ func getPassportNumber() -> String{
     }
     return id
 }
+// функция, проверяющаю корректность введенных данных
 func isCorrectPassport(_ passportNumber: String) -> Bool {
     let arr = Array(passportNumber)
     var flag = true

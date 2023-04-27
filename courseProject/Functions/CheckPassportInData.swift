@@ -1,3 +1,5 @@
+// функция, которая проверяет, есть ли паспорт в хеш таблице
+// возвращает корректный номер паспорта
 func checkPassportInData() -> String {
     var passportNumber = getPassportNumber()
     while true {

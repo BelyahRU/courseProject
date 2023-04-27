@@ -1,3 +1,4 @@
+// функция, с помощью которой мы вводим число типа Int
 func getIntNumber() -> Int{
     var number: Int = 0
     while true {
