@@ -21,6 +21,7 @@
 		1AEF054F29FB2FD900D01E0F /* checkRoomInData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEF054E29FB2FD900D01E0F /* checkRoomInData.swift */; };
 		1AEF055129FB2FF300D01E0F /* CheckPassportInData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEF055029FB2FF300D01E0F /* CheckPassportInData.swift */; };
 		1AEF055329FB34A000D01E0F /* getIntNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEF055229FB34A000D01E0F /* getIntNumber.swift */; };
+		1AEF055529FBDDB800D01E0F /* Boyer-Moore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEF055429FBDDB800D01E0F /* Boyer-Moore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -51,6 +52,7 @@
 		1AEF054E29FB2FD900D01E0F /* checkRoomInData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = checkRoomInData.swift; sourceTree = "<group>"; };
 		1AEF055029FB2FF300D01E0F /* CheckPassportInData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckPassportInData.swift; sourceTree = "<group>"; };
 		1AEF055229FB34A000D01E0F /* getIntNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getIntNumber.swift; sourceTree = "<group>"; };
+		1AEF055429FBDDB800D01E0F /* Boyer-Moore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Boyer-Moore.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 				1A97E95929F8AAFD00CA5AFA /* HotelRooms */,
 				1A948EA529F6F3960072C915 /* Guests */,
 				1A948E9C29F6E3770072C915 /* main.swift */,
+				1AEF055429FBDDB800D01E0F /* Boyer-Moore.swift */,
 			);
 			path = courseProject;
 			sourceTree = "<group>";
@@ -218,6 +221,7 @@
 				1A948EA929F6F3D20072C915 /* GuestHashTable.swift in Sources */,
 				1AEF054F29FB2FD900D01E0F /* checkRoomInData.swift in Sources */,
 				1AEF055129FB2FF300D01E0F /* CheckPassportInData.swift in Sources */,
+				1AEF055529FBDDB800D01E0F /* Boyer-Moore.swift in Sources */,
 				1A97E94E29F8922B00CA5AFA /* AVLTree.swift in Sources */,
 				1A97E95629F8A6CF00CA5AFA /* LinkedList.swift in Sources */,
 				1AEF054A29FB28E000D01E0F /* getPassportNumber.swift in Sources */,

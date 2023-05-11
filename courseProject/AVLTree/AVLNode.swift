@@ -28,7 +28,9 @@ class AVLNode {
     var rightHeight: Int {
         return rightChild?.height ?? -1
     }
-    
+    var min: AVLNode {
+        leftChild?.min ?? self // самое левое значение(минимальное), функция вызывается рекурсивно
+    }
     
     
 }
@@ -73,10 +75,11 @@ extension AVLNode {
     
     // Алгоритм Боуера...
     func positionInTreeByEquipment(_ equipment: String, _ array: inout [HotelRoom]) {
-        let set1 = Set(equipment.components(separatedBy: ", ").map { $0.trimmingCharacters(in: .whitespacesAndNewlines) })
-
-        let set2 = Set(value.equipment.components(separatedBy: ", ").map { $0.trimmingCharacters(in: .whitespacesAndNewlines) })
-        if set1.isSubset(of: set2) {
+//        let set1 = Set(equipment.components(separatedBy: ", ").map { $0.trimmingCharacters(in: .whitespacesAndNewlines) })
+//
+//        let set2 = Set(value.equipment.components(separatedBy: ", ").map { $0.trimmingCharacters(in: .whitespacesAndNewlines) })
+        
+        if search(equpmentRoom: value.equipment, equipment: equipment) {
             array.append(value)
         }
         leftChild?.positionInTreeByEquipment(equipment, &array)

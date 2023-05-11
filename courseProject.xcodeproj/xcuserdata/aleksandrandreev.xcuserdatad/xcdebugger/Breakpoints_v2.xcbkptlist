@@ -14,8 +14,8 @@
             filePath = "courseProject/AVLTree/AVLNode.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
             landmarkName = "positionInTree(_:_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -30,8 +30,8 @@
             filePath = "courseProject/LinkedList/LinkedList.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "266"
-            endingLineNumber = "266"
+            startingLineNumber = "265"
+            endingLineNumber = "265"
             landmarkName = "DLinkedList"
             landmarkType = "14">
          </BreakpointContent>
@@ -46,10 +46,10 @@
             filePath = "courseProject/GuestHashTable.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
-            landmarkName = "searchByFullName(fullname:)"
-            landmarkType = "7">
+            startingLineNumber = "90"
+            endingLineNumber = "90"
+            landmarkName = "GuestHashTable"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -62,8 +62,8 @@
             filePath = "courseProject/main.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "252"
-            endingLineNumber = "252"
+            startingLineNumber = "258"
+            endingLineNumber = "258"
             landmarkName = "unknown"
             landmarkType = "0">
             <Locations>
@@ -104,16 +104,48 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "6EF14C35-5D71-4F77-9FE1-1B2BFB0A4C9E"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "courseProject/AVLTree/AVLNode.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "75"
-            endingLineNumber = "75"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
             landmarkName = "positionInTreeByEquipment(_:_:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "6EF14C35-5D71-4F77-9FE1-1B2BFB0A4C9E - f68192a04392cb84"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "courseProject.AVLNode.positionInTreeByEquipment(Swift.String, inout Swift.Array&lt;courseProject.HotelRoom&gt;) -&gt; ()"
+                  moduleName = "courseProject"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aleksandrandreev/Desktop/%D0%BA%D1%83%D1%80%D1%81%D0%B0%D1%87/courseProject/courseProject/AVLTree/AVLNode.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "69"
+                  endingLineNumber = "69"
+                  offsetFromSymbolStart = "124">
+               </Location>
+               <Location
+                  uuid = "6EF14C35-5D71-4F77-9FE1-1B2BFB0A4C9E - f68192a04392caad"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "courseProject.AVLNode.positionInTreeByEquipment(Swift.String, inout Swift.Array&lt;courseProject.HotelRoom&gt;) -&gt; ()"
+                  moduleName = "courseProject"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aleksandrandreev/Desktop/%D0%BA%D1%83%D1%80%D1%81%D0%B0%D1%87/courseProject/courseProject/AVLTree/AVLNode.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "78"
+                  endingLineNumber = "78"
+                  offsetFromSymbolStart = "124">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -126,8 +158,8 @@
             filePath = "courseProject/main.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "250"
-            endingLineNumber = "250"
+            startingLineNumber = "256"
+            endingLineNumber = "256"
             landmarkName = "unknown"
             landmarkType = "0">
             <Locations>
@@ -220,8 +252,8 @@
             filePath = "courseProject/main.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "175"
-            endingLineNumber = "175"
+            startingLineNumber = "183"
+            endingLineNumber = "183"
             landmarkName = "unknown"
             landmarkType = "0">
             <Locations>
@@ -254,6 +286,100 @@
                   startingLineNumber = "175"
                   endingLineNumber = "175"
                   offsetFromSymbolStart = "21708">
+               </Location>
+               <Location
+                  uuid = "9B1637EA-8AFF-4B77-8051-3668B0A9F099 - 4e178b6ebe6692d7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "main"
+                  moduleName = "courseProject"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aleksandrandreev/Desktop/%D0%BA%D1%83%D1%80%D1%81%D0%B0%D1%87/courseProject/courseProject/main.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "183"
+                  endingLineNumber = "183"
+                  offsetFromSymbolStart = "18888">
+               </Location>
+               <Location
+                  uuid = "9B1637EA-8AFF-4B77-8051-3668B0A9F099 - 4e178b6ebe6692d7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "main"
+                  moduleName = "courseProject"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aleksandrandreev/Desktop/%D0%BA%D1%83%D1%80%D1%81%D0%B0%D1%87/courseProject/courseProject/main.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "183"
+                  endingLineNumber = "183"
+                  offsetFromSymbolStart = "18892">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7FC659FD-BC6C-4B0C-B8BA-4BF0EE8FA9C4"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "courseProject/main.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "229"
+            endingLineNumber = "229"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5D65FCEE-5D27-40BB-9652-502FF2CA6BB3"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "courseProject/Boyer-Moore.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "3"
+            endingLineNumber = "3"
+            landmarkName = "search(equpmentRoom:equipment:)"
+            landmarkType = "9">
+            <Locations>
+               <Location
+                  uuid = "5D65FCEE-5D27-40BB-9652-502FF2CA6BB3 - 5529e8c50331f4b2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "courseProject.search(equpmentRoom: Swift.String, equipment: Swift.String) -&gt; Swift.Bool"
+                  moduleName = "courseProject"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aleksandrandreev/Desktop/%D0%BA%D1%83%D1%80%D1%81%D0%B0%D1%87/courseProject/courseProject/Boyer-Moore.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "3"
+                  endingLineNumber = "3"
+                  offsetFromSymbolStart = "132">
+               </Location>
+               <Location
+                  uuid = "5D65FCEE-5D27-40BB-9652-502FF2CA6BB3 - 5529e8c50331f4b2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "courseProject.search(equpmentRoom: Swift.String, equipment: Swift.String) -&gt; Swift.Bool"
+                  moduleName = "courseProject"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aleksandrandreev/Desktop/%D0%BA%D1%83%D1%80%D1%81%D0%B0%D1%87/courseProject/courseProject/Boyer-Moore.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "3"
+                  endingLineNumber = "3"
+                  offsetFromSymbolStart = "140">
                </Location>
             </Locations>
          </BreakpointContent>

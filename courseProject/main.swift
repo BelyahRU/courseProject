@@ -6,28 +6,32 @@
 // 5) tree traversal method - Прямой
 // 6) word search algorithm in the text - Боуера и Мура (БМ)
 print("Перед началом работы проограммы введите вместительность гостиницы: ")
-var capacity = Int(readLine()!)!
+var capacity = getIntNumber()
 
 var hotel = GuestHashTable(capacity: capacity) // Вместительность гостиницы
+
+// создание посетителей
 let guest1 = Guest(passportNumber: "1234-567890", fullName: "Ivan Aleksandrovich Ivanov", birthYear: 1990, address: "Moscow", purposeOfStay: "Business")
-
-hotel.insert(guest1)
-
 let guest2 = Guest(passportNumber: "9876-543210", fullName: "Anna Evgenievna Petrova", birthYear: 1985, address: "Saint Petersburg", purposeOfStay: "Vacation")
-hotel.insert(guest2)
-
 let guest3 = Guest(passportNumber: "5678-123456", fullName: "Andrey Ivanovich Yakovlev", birthYear: 1978, address: "Yfa", purposeOfStay: "Travel")
-hotel.insert(guest3)
 let guest4 = Guest(passportNumber: "5864-201987", fullName: "Sergey Aleksandrovich Smirnov", birthYear: 2003, address: "Kazan", purposeOfStay: "Business")
-hotel.insert(guest4)
 let guest5 = Guest(passportNumber: "1917-402234", fullName: "Aleksandr Sergeevich Andreev", birthYear: 1965, address: "Kazan", purposeOfStay: "Business")
-hotel.insert(guest5)
 let guest6 = Guest(passportNumber: "4201-535325", fullName: "Sergey Aleksandrovich Smirnov", birthYear: 1987, address: "Saint Petersburg", purposeOfStay: "Travel")
-hotel.insert(guest6)
 let guest7 = Guest(passportNumber: "1923-524566", fullName: "Amina Nikolaevna Smirnova", birthYear: 1999, address: "Babaevo", purposeOfStay: "Travel")
+
+// заполнение хеш-таблицы
+hotel.insert(guest1)
+hotel.insert(guest2)
+hotel.insert(guest3)
+hotel.insert(guest4)
+hotel.insert(guest5)
+hotel.insert(guest6)
 hotel.insert(guest7)
 
+// АВЛ-дерево, в котором хранятся номера гостиницы
 var hotelRooms = AVLTree()
+
+// заполнение авл-дерева
 hotelRooms.insert(HotelRoom(number: "L001", numberOfSeats: "2", numberOfRooms: "3", presenceOfABathroom: true, equipment: "телевизор, ванна, кухня, 2 кровати"))
 hotelRooms.insert(HotelRoom(number: "L005", numberOfSeats: "1", numberOfRooms: "3", presenceOfABathroom: true, equipment: "телевизор, окно, кухня, 2 кровати"))
 hotelRooms.insert(HotelRoom(number: "L302", numberOfSeats: "1", numberOfRooms: "3", presenceOfABathroom: true, equipment: "котик, ванна, кухня, 2 кровати"))
@@ -35,6 +39,8 @@ hotelRooms.insert(HotelRoom(number: "L201", numberOfSeats: "2", numberOfRooms: "
 hotelRooms.insert(HotelRoom(number: "L003", numberOfSeats: "2", numberOfRooms: "3", presenceOfABathroom: true, equipment: "душ, ванна, кухня, 2 кровати"))
 
 var listGuests = DLinkedList() // Список гостей
+
+// заполнение списка гостей данными
 var checkInguest1 = CheckInOut(passportId: "1234-567890", number: "L001", checkInData: "20.12.2022", checkOutData: "01.01.2023")
 
 var checkInguest2 = CheckInOut(passportId: "9876-543210", number: "L001", checkInData: "24.11.2022", checkOutData: "21.12.2022")
@@ -42,12 +48,12 @@ var checkInguest2 = CheckInOut(passportId: "9876-543210", number: "L001", checkI
 var checkInguest3 = CheckInOut(passportId: "5678-123456", number: "L302", checkInData: "28.05.2023", checkOutData: "30.05.2023")
 
 print("Регистрация постояльцев в гостинице\n")
+//добавление данных в список
 listGuests.append(value: checkInguest1)
 listGuests.append(value: checkInguest2)
 listGuests.append(value: checkInguest3)
-var room = hotelRooms.find("L001")!
-print(listGuests.getCountGuests(room: room))
-var dict: Dictionary<String, Int> = [:]
+
+// цикл while, с помощью которого происходит работа с пользователем
 var doesProgramWork = true
 while doesProgramWork == true {
     print("\n    Выберете действие: \n")
@@ -67,7 +73,7 @@ while doesProgramWork == true {
     print("14.Регистрация вЫселения нового постояльца")
     print("Для выхода из программы введите число, не соответствующее диапазону")
     let answer = getIntNumber()
-    //проверка корректности ввода
+    
     if answer == 1 {
         print("Для регистрации постояльца вам нужно будет ввести его данные")
         var passportNumber = checkPassportInData()
@@ -79,13 +85,14 @@ while doesProgramWork == true {
         let adress = String(readLine()!)
         print("Введите цель прибытия:")
         let purpose = String(readLine()!)
-        
+        // ввод данных в структуру Guest
         let guest = Guest(passportNumber: passportNumber, fullName: fullName, birthYear: birthYear, address: adress, purposeOfStay: purpose)
         hotel.insert(guest)
         
         print("Постоялец зарегестрированн")
         
     }else if answer == 2 {
+        
         
         print("Номер паспорта постояльца, которого необходимо удалить из базы:")
         let passportNumber = getPassportNumber()
@@ -108,6 +115,7 @@ while doesProgramWork == true {
     } else if answer == 5 {
         print("Введите номер паспорта:")
         let passportNumber = getPassportNumber()
+        
         
         if let answ = hotel.search(passportNumber) {
             answ.getAllInformation()
@@ -147,7 +155,7 @@ while doesProgramWork == true {
         
         var numberOfSeats = String(readLine()!)
         while true {
-            if let num = Int(numberOfSeats) {
+            if Int(numberOfSeats) != nil {
                 break
             } else {
                 print("Некорректно, повторите ввод: ")
@@ -168,14 +176,14 @@ while doesProgramWork == true {
         
         print("Укажите есть ли санузел (true/false)")
         
-        var presenceOfBathroom = Bool(readLine()!)
+        var presenceOfBathroom = Bool(readLine()!)!
         //добавить проверку
         
         print("Укажите Оборудование")
         print("Оборудование обязательно должно быть написано через запятую с пробелом!")
         let equipment = String(readLine()!)
         
-        let room = HotelRoom(number: number, numberOfSeats: numberOfSeats, numberOfRooms: numberOfRooms, presenceOfABathroom: presenceOfBathroom!, equipment: equipment)
+        let room = HotelRoom(number: number, numberOfSeats: numberOfSeats, numberOfRooms: numberOfRooms, presenceOfABathroom: presenceOfBathroom, equipment: equipment)
         hotelRooms.insert(room)
         print("Номер создан")
         
@@ -221,14 +229,12 @@ while doesProgramWork == true {
         print(room.getAllInformation())
         
     } else if answer == 12 {
-        // алгоритм поиска
         print("Введите фрагменты оборудования через запятую с пробелом")
         let equipment = String(readLine()!)
         let result = hotelRooms.searchByEquipment(equipment)
         for i in 0..<result.count {
             print(result[i].number)
         }
-        print(result)
         
     } else if answer == 13 {
         var id = getPassportNumber()
@@ -260,7 +266,7 @@ while doesProgramWork == true {
         
     } else if answer == 14 {
         print("Введите номер паспорта клиента, которого хотите выселить:")
-        var id = checkPassportInData()
+        var id = getPassportNumber()
         let nodeGuest = listGuests.find(passportId: id)
         listGuests.remove(node: nodeGuest!)
         print("Пользователь удален")

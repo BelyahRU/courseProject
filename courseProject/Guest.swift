@@ -1,8 +1,8 @@
 struct Guest {
-    var passportNumber: String
-    var fullName: String
-    var birthYear: Int
-    var address: String
+    var passportNumber: String // номер паспорта
+    var fullName: String // ФИО
+    var birthYear: Int // день рождения
+    var address: String // адресс
     var purposeOfStay: String //цель визита
     
     func getAllInformation() {
